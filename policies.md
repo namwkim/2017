@@ -1,11 +1,13 @@
 ---
-title: Policies
+title: Policies and Grading
+shorttitle: Policies
 layout: default
+nav_include: 3
 ---
 
 ## Course Logistics
 
-**Prerequisites**
+### Prerequisites
 
 Programming knowledge, **in Python** at the level of CS50 and CS 109 (or above). Besides this, you should have interest or investment in scientific computing.
 
@@ -21,7 +23,7 @@ We'll be using [Piazza](https://piazza.com/class/irs0s2jc8sv1iz) as our online f
 
 **Lectures and Labs**
 
-The class meets twice a week for lectures (Monday And Wednesday) and Friday for  labs. The labs are designed to help you master the relevant materials, and to start work on your homework in groups, and to even make progress on your project. The weekly schedule is posted on the course web site.
+The class meets twice a week for lectures (Monday And Wednesday) and Friday for  labs. The labs are designed to help you master the relevant materials, and to start work on your homework in groups, and to even make progress on your project. <span class="sidenote">See Tufte’s comment in the <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Vt">Tufte book fonts</a> thread. </span>. The weekly schedule is posted on the course web site.
 
 Lab is compulsory.
 

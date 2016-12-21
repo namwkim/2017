@@ -1,5 +1,4 @@
 ---
-title: "CS 207: Systems Development for Computational Science"
 layout: "default"
 ---
 

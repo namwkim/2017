@@ -1,6 +1,9 @@
 ---
-title: Schedule
+title: Schedule and Syllabus
+shorttitle: Schedule
 layout: default
+nav_include: 2
+noline: 1
 ---
 
 | Week | Date (Mon) | Lecture1_on_Monday                       | L2_on_Wednesday                          | Lab_on_Friday                            | HW_Information                           | Project_Information                      |

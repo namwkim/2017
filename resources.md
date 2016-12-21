@@ -1,6 +1,8 @@
 ---
-title: Resources
+title: Resources and Readings
+shorttitle: Resources
 layout: default
+nav_include: 4
 ---
 
 
