@@ -7,75 +7,56 @@ layout: "default"
 
 **Instructor:** Rahul Dave (IACS, mailto:rahuldave@gmail.com )
 
-**TFs:** Head TF: Michael Lackner, Fuk Yeung, Sarah Mohammed, Sonu Mehta
+**TFs:**
+
+Weiwei Pan, Rafael Martinez Galarza
 
 
 ## When?
 
-Mondays 2.30pm - 4pm Lecture. Compulsory to attend. Pierce 209.
+Tuesday 11.30am - 1pm, Lecture. Compulsory to attend. Maxwell Dworkin G115.
 
-Wednesdays 2.30pm - 4pm Lecture. Compulsory to attend. Pierce 209.
+Thursday 11.30am - 1pm, Lecture. Compulsory to attend. Maxwell Dworkin G115.
 
-Fridays 3pm - 4.30pm Lab. Compulsory to attend. Pierce 301.
+Fridays 11am - 1pm Lab. Compulsory to attend. Pierce 301.
 
 ## Office Hours
 
 - anytime by appointment with any of us.
-- Rahul: 1-2pm Wednesday, 11.45am-12.45pm Thu, B164
-- Michael: 1-2pm Tuesday, B158
-- Sonu and Sarah, alternate weeks, Tue 7-8pm, B164
-- Fuk, Thu 7-8pm, B164.
+- soecific timnes TBD
 
 ## Online?
 
-- web site at https://iacs-cs207.github.io/cs207-2016/ (you are reading it)
-- github repo at https://github.com/iacs-cs207/cs207-2016 (clone this fresh for each class or fork it and set this original up as a remote)
-- your own labs repo at `githubusername/cs207work`
-- discussions at https://piazza.com/class/irs0s2jc8sv1iz
+- web site at https://am207.github.io/2017/ (you are reading it)
+- github repo at https://github.com/am207/2017 (clone this fresh for each class or fork it and set this original up as a remote)
+- discussions at STILL TO COME
 
 ## FAQ
 
 **How onerous is it?**
 
-Somewhat.
+Quite. This is a hard class.
 
 **What is this class about?**
 
-Computation has long been an important tool for scientists, but the past two decades have seen a true revolution in the practice of science. Computation, in the form of both simulation and analysis, has joined theory and experimentation as the oft-quoted “third pillar” of science.
-
-This is an applications course highlighting the use of software engineering and computer science in solving scientific problems. You will learn the
-fundamentals of developing scientific software systems including abstract thinking, algorithmic development, the handling of data, and assessment of computational approaches: all in the context of good software engineering practices.
+Monte Carlo methods are a diverse class of algorithms that rely on repeated random sampling to compute the solution to problems whose solution space is too large to explore systematically or whose systemic behavior is too complex to model. This course introduces important principles of Monte Carlo techniques and demonstrates the power of these techniques with simple (but very useful) applications. Starting from the basic ideas of Bayesian analysis and Markov chain Monte Carlo samplers, we move to more recent developments such as slice sampling, and Hamiltonian Monte Carlo. We complete our investigation of Monte Carlo samplers with streaming methods such as particle filters/sequential Monte Carlo. Throughout the course we delve into related topics in stochastic optimization and inference such as simulated annealing, probabilistic Gaussian models, and Gaussian processes. Applications to Bayesian inference and machine learning are used throughout. We will be using Python for all programming assignments and projects. All lectures will be recorded and should be available 24 hours after meeting time.
 
 
 **Why take this class?**
 
-If you are a scientist, data, physical, or social, this course will will expose you to key topics from language design and use, algorithms and data structures, and software engineering. You'll write better quality software, and be able to choose which technologies you ought to use on any given project, from its computing aspects to its data handling aspects.
-
-If you are a computer scientist, this course will introduce you to good software engineering practice, especially in the context of scientific software development.
-
-You should take this class if you want to be a good programmer or programming-capable member of your "company"'s data science team. Seriously, if you are not, you will be at a disadvantage compared to others.
+BLA
 
 **Expected Learning Outcomes**
 
 After successful completion of this course, you will be able to:
 
-* Use Python, including its advanced features to write scientific programs
-
-* understand what features of Python (or for that matter any programming language) make up its language execution model and how these features impact the code you write: e.g. how modularity, abstraction, and encapsulation can be used to solve problems
-
-* write these programs with good software engineering practices
-
-* code data management techniques to store data, staring from a good understanding of data structures.
-
-* combine these techniques together to write large pieces of software (you will do a group project for this), working in a team of scientists, programmers, etc.
-
-* Be able to hit the road running as a scientist in a startup or other company, or for that matter in academia: you will be able to evaluate and test software to see which one your group ought to use. You will also be a capable unicorn: able to contribute on both the science and software engineering sides of things.
+BLA
 
 
 **Who should take this class?**
 
-The prerequisite for this class is programming knowledge, in Python, at the level of CS50 and CS 109 (or above). Besides this, you should have interest or investment in scientific computing.
+The prerequisites for this class are programming knowledge, in Python, at the CS 109a level(or above), Data Science (at the level of cs109a or above), and Statistics at the level of Stat 110 (or above). If you are not sure about your preparedness for this class, come talk to us.
 
 **What is the structure of the class?**
 
-There will be three modules running concurrently, each focusing on an important area. These modules are "System and Software Engineering" (SSE), Language(LANG), and Data Structures and Algorithms(DSA). You will form groups and work on a project to write a time series analysis library and a time series website and database through the semester. This effort will exercise all three modules.
+BLA
