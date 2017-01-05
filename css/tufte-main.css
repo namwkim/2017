@@ -320,7 +320,7 @@ h2 {
 h3 {
   font-style: italic;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-top: 2.1777777777777778rem;
   margin-bottom: 0;
   line-height: 1.08888888888889; }
@@ -394,12 +394,11 @@ table, table.booktabs {
   width: auto;
   margin: 0 auto;
   border-spacing: 0px;
-  border: 1px solid #333333;}
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333; }
 
 .booktabs th, th {
-  border: 1px solid #333333;
   border-bottom: 1px solid #333333;
-  background-color: #fffff8;
   padding: 0.65ex 0.5em 0.4ex 0.5em;
   font-weight: normal;
   text-align: center; }
@@ -421,7 +420,7 @@ th, td {
 .booktabs td, td {
   padding-left: 0.5em;
   padding-right: 0.5em;
-  border: 1px solid #737373;
+  border-bottom: 1px solid #737373;
   text-align: left; }
 
 .booktabs caption, caption {
@@ -657,7 +656,7 @@ nav.group a.active {
 }
 
 header hr {
-    width: 90%;
+    width: 87.5%;
 }
 header > nav a {
   font-size: 1.6rem;
@@ -704,16 +703,7 @@ body.full-width, .content-listing, ul.content-listing li.listing {
   padding: 0% 5%; }
 
 .full-width article p {
-width: 87.5%; }
-
-.full-width article div {
-width: 87.5%; }
-
-.full-width article ul {
-   width: 87.5%; }
-
-.full-width article div ol {
-  width: 87.5%; }
+  width: 90%; }
 
 h1.content-listing-header {
   font-style: normal;

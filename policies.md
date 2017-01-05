@@ -13,7 +13,7 @@ Programming knowledge, **in Python** at the level of CS50 and CS 109 (or above).
 
 **Required Textbook**
 
-see [Resources](resources.html) page.
+see [Resources](/resources.html) page.
 
 **Online Discussion Forum**
 

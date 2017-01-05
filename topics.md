@@ -1,5 +1,5 @@
 ---
-title: Topic Index
+title: Topics
 shorttitle: Topics
 layout: default
 nav_include: 5

@@ -277,7 +277,7 @@ $$P(d|c)  = \prod_k P(t_k | c) $$
 
 the conditional independence assumption.
 
-Then we see that for which c is $P(c|d)$ higher.
+Then we see that for which c is $P(c \vert d)$ higher.
 
 For floating point underflow we change the product into a sum by going into log space. So:
 
