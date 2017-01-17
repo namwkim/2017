@@ -146,6 +146,7 @@ Expect this list to either shrink, or for some topics to be replaced, as the sem
 
 - point estimates from decision theory: decision risk
 - the bayesian structure of machine learning through posterior predictives
+- generative models revisited and LDA
 - hyper-parameters in a bayesian setup.
 - are we playing with parameters or with models?
 - multistage decision analysis
