@@ -1,7 +1,17 @@
 ---
 layout: wiki
 ---
-# AM207 Homework 1
+# Homework 1 
+
+## AMPTH 207: Stochastic Methods for Data Analysis, Inference and Optimization
+
+**Due Date:** Thursday, Febrary 2nd, 2017 at 11:59pm
+
+**Instructions:**
+
+- Upload your final answers as well as your iPython notebook containing all work to Canvas.
+
+- Structure your notebook and your work to maximize readability.
 
 ## Problem 1: Bayes Theorem
 
@@ -49,10 +59,9 @@ What are the values for $\lambda_0$ and $\lambda_1$ that maximizes the likelihoo
 Visualize the data along with the distribution you determined in part A (in two dimensions or three).
 
 ## Problem 3: Frequentist Stats
-
-Read the data set contained in [Homework_1_Data.txt](Homework_1_Data.txt). Each data point is a two-dimensional vector, $\mathbf{x} = (x_1, x_2)$.
-
 **Coding required**
+
+Read the data set contained in `Homework_0_Data.txt`. Each data point is a two-dimensional vector, $\mathbf{x} = (x_1, x_2)$.
 
 ### Part (A): Visualization and Interpretation
 
@@ -71,4 +80,4 @@ Read the data set contained in [Homework_1_Data.txt](Homework_1_Data.txt). Each 
 
 - Empirically estimate the standard deviation of the distribution $f_{x_2 \mid x_1}$, for $x_1 \in [3.99, 4.01]$. Estimate, also the SE (standard error) of the estimate.
 
-- Given the SE, how many digits in your mean estimate are significant? Given the SE, How many in your standard deviation estimate are significant? Explain why.
+- Given the SE, How many in your standard deviation estimate are significant? Explain why.
