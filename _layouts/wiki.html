@@ -13,8 +13,9 @@
         displayMath: [ ['$$', '$$']],
         processEscapes: true,
         displayAlign: 'center',
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+      "HTML-CSS": {
+          scale: 90},
     });
     </script>
     <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
@@ -48,7 +49,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body class="full-width">
   <header>
     <nav class="group">
   	<a href="{{site.baseurl}}/"><img class="badge" src="{{site.baseurl}}/assets/am207-logo.png" alt="CHA"></a>
@@ -61,6 +62,10 @@
     {% endunless %}
   </header>
   <article>
+        {% if page.notebook %}
+        <p><a href="{{page.notebook}}">Download Notebook</a></p>
+        {% endif %}
+
         {{ content }}
   </article>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

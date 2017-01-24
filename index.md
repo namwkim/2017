@@ -9,7 +9,7 @@ layout: "default"
 
 **TFs:**
 
-Weiwei Pan, Rafael Martinez Galarza
+Weiwei Pan, Rafael Martinez Galarza, Michael Farrell, Patrick Ohiomoba
 
 
 ## When?
@@ -22,8 +22,14 @@ Fridays 11am - 1pm Lab. Compulsory to attend. Pierce 301.
 
 ## Office Hours
 
+Always in B164, NW Building.
+
 - anytime by appointment with any of us.
-- soecific timnes TBD
+- Rahul: Tue and Thu 1.30pm to 2.30pm
+- Michael: Wed 7pm to 8pm
+- Weiwei: Mon 4pm to 5pm
+- Patrick: Thu 4pm to 5pm
+- Rafael: some weeks, time TBD.
 
 ## Online?
 
@@ -39,24 +45,24 @@ Quite. This is a hard class.
 
 **What is this class about?**
 
-Monte Carlo methods are a diverse class of algorithms that rely on repeated random sampling to compute the solution to problems whose solution space is too large to explore systematically or whose systemic behavior is too complex to model. This course introduces important principles of Monte Carlo techniques and demonstrates the power of these techniques with simple (but very useful) applications. Starting from the basic ideas of Bayesian analysis and Markov chain Monte Carlo samplers, we move to more recent developments such as slice sampling, and Hamiltonian Monte Carlo. We complete our investigation of Monte Carlo samplers with streaming methods such as particle filters/sequential Monte Carlo. Throughout the course we delve into related topics in stochastic optimization and inference such as simulated annealing, probabilistic Gaussian models, and Gaussian processes. Applications to Bayesian inference and machine learning are used throughout. We will be using Python for all programming assignments and projects. All lectures will be recorded and should be available 24 hours after meeting time.
+Develops skills for computational research with focus on stochastic approaches, emphasizing implementation and examples. Stochastic methods make it feasible to tackle very diverse problems when the solution space is too large to explore systematically, or when microscopic rules are known, but not the macroscopic behavior of a complex system. Methods are illustrated with examples from a wide variety of fields, like biology, finance, and physics. We tackle Bayesian methods of data analysis as well as various stochastic optimization methods. Topics include stochastic optimization such as stochastic gradient descent (SGD) and simulated annealing, Bayesian data analysis, Markov chain Monte Carlo (MCMC), and variational analysis.
 
+Monte Carlo methods are a diverse class of algorithms that rely on repeated random sampling to compute the solution to problems whose solution space is too large to explore systematically or whose systemic behavior is too complex to model. This course introduces important principles of Monte Carlo techniques and demonstrates the power of these techniques with simple (but very useful) applications. Starting from the basic ideas of Bayesian analysis and Markov chain Monte Carlo samplers, we move to more recent developments such as slice sampling, and Hamiltonian Monte Carlo.  Throughout the course we delve into related topics in stochastic optimization and inference such as simulated annealing, probabilistic Gaussian models, and Gaussian processes. Applications to Bayesian inference and machine learning are used throughout. We will be using Python for all programming assignments and projects. All lectures will be recorded and should be available 24 hours after meeting time.
 
-**Why take this class?**
-
-BLA
 
 **Expected Learning Outcomes**
 
 After successful completion of this course, you will be able to:
 
-BLA
+- optimize objectives such as loss functions using Stochastic Gradient Descent and Simulated annealing
+- Analyse problems using bayesian approaches
+- Perform Bayesian linear and generalized linear regression
+- Understand the use of generative models in machine learning; thus be prepared to model complex data in both supervised and especially unsupervised ways
+- Perform sampling and MCMC to solve a variety of problems such as integrals and inference
+- Understand the philosophy of Machine Learning and Bayesian Stats
+- Learn how and when to use parametric and non-parametric stochastic processes
 
 
 **Who should take this class?**
 
 The prerequisites for this class are programming knowledge, in Python, at the CS 109a level(or above), Data Science (at the level of cs109a or above), and Statistics at the level of Stat 110 (or above). If you are not sure about your preparedness for this class, come talk to us.
-
-**What is the structure of the class?**
-
-BLA

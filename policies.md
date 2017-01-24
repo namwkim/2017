@@ -3,6 +3,7 @@ title: Policies and Grading
 shorttitle: Policies
 layout: default
 nav_include: 3
+noline: 1
 ---
 
 ## Course Logistics
@@ -17,7 +18,7 @@ see [Resources](/resources.html) page.
 
 **Online Discussion Forum**
 
-We'll be using [Piazza](https://piazza.com/) as our online forum.
+We'll be using [Piazza](https://piazza.com/class/iyavscizng7py) as our online forum.
 
 ## Course Components
 
@@ -29,27 +30,27 @@ Lab is compulsory.
 
 **Homework**
 
-34 points
+48 points
 
-There will be a homework every week with a maximum of 2 questions. This homework should not take more than 4 hours.
+There will be a homework every week with a maximum of 2 questions. This homework should not take more than 4-5 hours. There will be 11 short format homeworks. These are to be submitted as jupyter notebooks.
 
 **Long-Format Homework**
 
-48 points
+32 points
 
-There will be one long format homework every two weeks, except over spring break when you will have 3 weeks instead of two. The long-format homework will be assigned along with the regular homework. The long format homework should be doable within 8-10 hours. This means that all homework included, you ought to be spending about 8-10 hours per week on homework.
+There will be one long format homework every two-three weeks, for a total of 4 long-format homeworks through the semester. The long-format homework will be assigned along with the regular homework. The long format homework should be doable within 9-10 hours, but you will have >=2 weeks to do it. This means that all homework included, you ought to be spending about 10 hours per week on homework for the weeks in which you have long format homework. These are to be submitted as jupyter notebooks.
 
 **Final exam**
 
 15 points
 
-At the end of the semester there will be a take home exam, which will be about 1.5 long format homework long. You will have >10 days to finish it.
+At the end of the semester there will be a take home exam, which will be about 1.5 long format homework long. You will have >=10 days to finish it. To be submitted as a jupyter notebook.
 
 **Participation**
 
-3 points
+5 points
 
-Piazza, with weight given to answering other's questions. Pull requests with examples and errata on wiki pages.
+Coming to class. Piazza, with weight given to answering other's questions. Pull requests with examples and errata on wiki pages would be appreciated, and will be used to push you up to the next highest grade. (Think of it as building a learning community)
 
 ## Course Policies
 
@@ -70,7 +71,7 @@ In addition to the scores the Teaching Fellows will give detailed written feedba
 
 **Collaboration Policy**
 
-You can collaborate with upto two additional people on long-format homework.
+You can collaborate with up-to two additional people on any homework, as long as you write your own homework and mention your collaborators on it.
 
 **Quoting Sources**
 
@@ -78,15 +79,15 @@ You must acknowledge any source code that was not written by you by mentioning t
 
 
 
-**Lab Deadlines and Late Days**
+**Deadlines and Late Days**
 
-Homework and Project **must** be turned in on time, including the long-format homework.
+Homework be turned in on time, including the long-format homework. You can have upto 3 late days across the semester, with no more than 1 late day on any homework, short or long. (That is you could be late by at most 1 day on at most 3 out of 15 homework submissions). No late days on the final exam.
 
 Exceptions: Nada. No exceptions, except for illness, with a doctor's certificate.
 
 **Regrading Policy**
 
-If you think we were too harsh, please ask for a regrade within a day of getting your grade.
+If you think we were too harsh, please ask for a regrade *within a day* of getting your grade.
 
 
 ## Additional Information
