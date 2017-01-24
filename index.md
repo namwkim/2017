@@ -1,6 +1,7 @@
 ---
 title: "AM207"
 layout: "default"
+noline: 1
 ---
 
 ## Who?
@@ -35,7 +36,7 @@ Always in B164, NW Building.
 
 - web site at https://am207.github.io/2017/ (you are reading it)
 - github repo at https://github.com/am207/2017 (clone this fresh for each class or fork it and set this original up as a remote)
-- discussions at STILL TO COME
+- discussions at [Piazza](https://piazza.com/class/iyavscizng7py)
 
 ## FAQ
 
