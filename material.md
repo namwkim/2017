@@ -12,7 +12,7 @@ noline: 1
 - [Homework](homework/)
 - [Topics Index](topics.html)
 - [Terms Glossary](terms.html)
-- [Videos](https://canvas.harvard.edu/courses/26238/external_tools/22940)
+- [Videos](https://matterhorn.dce.harvard.edu/engage/ui/index.html#/2017/02/24932). You will find there a live feed for the current lecture!
 
 ## Sequentially
 
