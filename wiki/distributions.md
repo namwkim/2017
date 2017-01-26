@@ -8,7 +8,7 @@ Remember that a [Random Variable](probability.html) is a mapping $ X: \Omega \ri
 
 ## Cumulative distribution Function
 
-The **cumulative distribution function**, or the **CDF**, is a function 
+The **cumulative distribution function**, or the **CDF**, is a function
 
 $$F_X : \mathbb{R} → [0, 1] $$,
 
@@ -30,6 +30,8 @@ $X$ is called a **discrete random variable** if it takes countably many values $
 
 $$f_X(x) = p(X=x)$$
 
+$f_X$ **is a probability**.
+
 The pmf for the number of heads in two coin tosses (taken from All of Stats) looks like this:
 
 ![](images/2tosspmf.png)
@@ -38,22 +40,22 @@ On the other hand, a random variable is called a **continuous random variable** 
 
 $$p(a < X < b) = \int_{a}^{b} f_X (x) dx$$
 
-The function $f_X$ is called the probability density function (pdf). We have that
+The function $f_X$ is called the probability density function (pdf). We have the CDF:
 
-$$F_X (x) = \int_{-\infty}^{x}f_X (t) dt $$ 
+$$F_X (x) = \int_{-\infty}^{x}f_X (t) dt $$
 
 and $f_X (x) = \frac{d F_X (x)}{dx}$ at all points x at which $F_X$ is differentiable.
 
 Continuous variables are confusing. Note:
 
-1. $p(X=x) = 0$ for every $x$. You cant think of $f_X(x)$ as $p(X=x)$. This holds only for discretes. You can only get probabilities from a pdf by integrating, if only over a very small paty of the space.
+1. $p(X=x) = 0$ for every $x$. You **cant think** of $f_X(x)$ as $p(X=x)$. This holds only for discretes. You can only get probabilities from a pdf by integrating, if only over a very small paty of the space.
 2. A pdf can be bigger than 1 unlike a probability mass function, since probability masses represent actual probabilities.
 
 ### A continuous example: the Uniform Distribution
 
 Suppose that X has pdf
 $$
-f_X (x) = 
+f_X (x) =
 \begin{cases}
 1 & \text{for } 0 \leq x\leq 1\\
     0             & \text{otherwise.}
@@ -61,7 +63,7 @@ f_X (x) =
 $$
 A random variable with this density is said to have a Uniform (0,1) distribution. This is meant to capture the idea of choosing a point at random between 0 and 1. The cdf is given by:
 $$
-F_X (x) = 
+F_X (x) =
 \begin{cases}
 0 & x \le 0\\
 x & 0 \leq x \leq 1\\
@@ -82,7 +84,7 @@ $$X \sim Bernoulli(p)$$
 
 which is to be read as $X$ **has distribution** $Bernoulli(p)$. The pmf or probability function associated with the Bernoulli distribution is
 $$
-f(x) = 
+f(x) =
 \begin{cases}
 1 - p & x = 0\\
 p & x = 1.
@@ -118,11 +120,8 @@ The similar formula for continuous densities might be suspected to a bit more co
 
 $$f_{X \mid Y}(x \mid y)  = \frac{f_{XY}(x,y)}{f_Y(y)},$$
 
-where we must assume that $f_Y(y) > 0$. Then we have the interpretation:
+where we must assume that $f_Y(y) > 0$. Then we have the interpretation that for some event A:
 
 $$p(X \in A \mid Y=y) = \int_{x \in A} f_{X \mid Y}(x,y) dx.$$
 
 An example of this is the uniform distribution on the unit square. Suppose then that $y=0.3$. Then the conditional density is a uniform density on the line between 0 and 1 at $y=0.3$.
-
-
-

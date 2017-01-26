@@ -6,11 +6,6 @@ nav_include: 4
 noline: 1
 ---
 
-## Class Stuff
-
-- [Lectures and Labs](lectures/)
-- [Homework](homework/)
-
 ## Books
 
 The course is mostly self-contained, but reading a textbook will help you with your understanding.

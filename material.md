@@ -1,0 +1,31 @@
+---
+title: Class Material
+shorttitle: Material
+layout: default
+nav_include: 5
+noline: 1
+---
+
+## Indices
+
+- [Lectures and Labs](lectures/) (along with readings for these lectures)
+- [Homework](homework/)
+- [Topics Index](topics.html)
+- [Terms Glossary](terms.html)
+- [Videos](https://canvas.harvard.edu/courses/26238/external_tools/22940)
+
+## Sequentially
+
+---
+
+### Week 1
+
+Lecture 1: **Introduction**
+
+[Slides and Notes](lectures/lecture1.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=25c6b2b9-864a-4ead-bd3b-cf9af8b1e201)
+
+Lecture 2: **Frequentist Stats**
+
+[Slides and Notes](lectures/lecture2.html)
+
+---

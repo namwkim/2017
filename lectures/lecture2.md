@@ -5,6 +5,10 @@ layout: "default"
 noline: 1
 ---
 
+## Slides
+
+- [PDF](../slides/lecture2.pdf)
+
 ## Notes
 
 - [Distributions](../wiki/distributions.html)

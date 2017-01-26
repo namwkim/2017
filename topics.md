@@ -1,23 +1,8 @@
 ---
-title: Topics
+title: Topic Index
 shorttitle: Topics
 layout: default
-nav_include: 5
 ---
-
-This course is broadly about learning models from data. To do this, you typically want to solve an optimization problem.
-
-But the problem with optimization problems is that they typically only give you point estimates. These are important. But we'd like to do inference: to learn the variability of our predictions.
-
-Furthermore, functions may have many minima, and we want to explore them. For these reasons we want to do Stochastic Optimization. And since we might want to characterize our variability, we are typically interested in the distributions of our predictions. Bayesian Statistics offers us a principled way of doing this, allowing us to incorporate the regularization of fairly flexible models in a proper way.
-
-A lot of interesting models involve "hidden variables" which are neither observable quantities, nor explicit parameters which we use to model our situations. Examples are unsupervised learning and hidden markov models. Indeed all of Bayesian Stats may be thought of as "marginalizing" over the hidden parameters of nature.
-
-Finally not all data is stationary and IID. Things have time-dependence and memory. How do we deal with these temporal correlations? Or for that matter, spatial correlations as well. Also, parametric models have finite capacity. These days deep networks are interesting because of the large capacity they have, and the generalization of finite to infinite capacity leads us to non-parametric models and stochastic processes.
-
-For these reasons, the main topics for our course are Stochastic optimization techniques, Bayesian Statistics, Hidden Variables, and Stochastic Processes.
-
-## Individual Topics
 
 These are not listed in the order of when they will be covered, or even the depth in which they will be covered (this is one course, after all). But these are all topics we will be touching on. Some will be covered in class, some in homework, some in lab, and some you will be expected to read on your own.
 
