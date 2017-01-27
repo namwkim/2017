@@ -12,7 +12,8 @@ noline: 1
 - [Homework](homework/)
 - [Topics Index](topics.html)
 - [Terms Glossary](terms.html)
-- [Videos](https://matterhorn.dce.harvard.edu/engage/ui/index.html#/2017/02/24932). You will find there a live feed for the current lecture!
+- [Videos](https://matterhorn.dce.harvard.edu/engage/ui/index.html#/2017/02/24932). You will find there
+ a live feed for the current lecture!
 
 ## Sequentially
 
@@ -26,6 +27,10 @@ Lecture 1: **Introduction**
 
 Lecture 2: **Frequentist Stats**
 
-[Slides and Notes](lectures/lecture2.html)
+[Slides and Notes](lectures/lecture2.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=9c427fac-29d5-4ef9-b7d0-fb9eb6f11a58)
+
+Lab 1: **Frequentist Example**
+
+[Solved and Unsolved](lectures/lab1.html)
 
 ---
