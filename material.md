@@ -15,6 +15,8 @@ noline: 1
 - [Videos](https://matterhorn.dce.harvard.edu/engage/ui/index.html#/2017/02/24932). You will find there
  a live feed for the current lecture!
 
+- [Zoom Lab Videos](https://vimeo.com/channels/1194246)
+
 ## Sequentially
 
 ---
@@ -31,6 +33,7 @@ Lecture 2: **Frequentist Stats**
 
 Lab 1: **Frequentist Example**
 
-[Solved and Unsolved](lectures/lab1.html)
+[Solved and Unsolved](lectures/lab1.html),
+[Part 1 Video](https://vimeo.com/201321508),[Part 2 Video](https://vimeo.com/201322530)
 
 ---
