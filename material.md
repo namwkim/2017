@@ -37,3 +37,9 @@ Lab 1: **Frequentist Example**
 [Part 1 Video](https://vimeo.com/201321508),[Part 2 Video](https://vimeo.com/201322530)
 
 ---
+
+### Week 2
+
+Lecture 3: **Law of Large Numbers, CLT, and Monte Carlo**
+
+[Notes and Readings](lectures/lecture3.html)

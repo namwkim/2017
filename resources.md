@@ -24,6 +24,8 @@ We will not be using R or Stan, but the principles remain the same.
 
 - [Wasserman's All of Statistics](http://www.stat.cmu.edu/~larry/all-of-statistics/)
 
+- [Shalizi's Advanced Data Analysis from an Elementary Point of View](http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
+
 ### Other useful books and sources
 
 Still to come
