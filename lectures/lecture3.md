@@ -13,7 +13,8 @@ noline: 1
 
 - [Expectations and the Law of Large Numbers](../wiki/Expectations.html)
 - [Sampling and the Central Limit Theorem](../wiki/SamplingCLT.html)
-- More to Come.
+- [Basic Monte Carlo](../wiki/basicmontercarlo.html)
+- [Integration with Monte Carlo](../wiki/montecarlointegrals.html)
 
 ## Readings
 
