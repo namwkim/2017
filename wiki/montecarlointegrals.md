@@ -26,22 +26,22 @@ Consider the definite integral:
 
 $$ I = \int_{a}^{b} f(x) \, dx $$
 
-We can write this  as
+Consider:
 
-$$  I = \int_{a}^{b} f(x) U_{ab}(x) \, dx $$
+$$ J = \int_{a}^{b} f(x) U_{ab}(x) \, dx $$
 
 If $V$ is the support of the uniform distribution on  a to b then the pdf
 $$ U_{ab}(x) = \frac{1}{V} = \frac{1}{b-a}$$
 
 Then from LOTUS and the law of large numbers:
 
-$$\frac{1}{V}  \int_{a}^{b} f(x) \, dx  =  E_{U}[f] = \lim_{n \to \infty} \frac{1}{N}\sum_{x_i \sim U} f(x_i) $$
+$$J = \frac{1}{V}  \int_{a}^{b} f(x) \, dx  =  \frac{I}{V} = E_{U}[f] = \lim_{n \to \infty} \frac{1}{N}\sum_{x_i \sim U} f(x_i) $$
 
 or
 
 $$I  = V  \times \lim_{n \to \infty} \frac{1}{N}\sum_{x_i \sim U} f(x_i) $$
 
-Practically speaking, our estimate will onl;y be as exact as the number of samples we draw, but more on this soon..
+Practically speaking, our estimate will only be as exact as the number of samples we draw, but more on this soon..
 
 ### Example. 
 
@@ -212,7 +212,7 @@ This looks like our telltale Normal distribution.
 
 This is not surprising
 
-### Estimating the error using the CLT.
+### Estimating the error in MC integration using the CLT.
 
 We know from the CLT that if $x_1,x_2,...,x_n$ be a sequence of independent, identically-distributed (IID) random variables from a random variable $X$, and that if $X$ has the finite mean $\mu$ AND finite variance $\sigma^2$. 
 
@@ -229,11 +229,11 @@ This is true *regardless* of the shape of $X$, which could be binomial, poisson,
 
 The sums
 
-$$S_n(g) = \frac{1}{n} \sum_{i=1}^{n} g(x_i) $$
+$$S_n(f) = \frac{1}{n} \sum_{i=1}^{n} f(x_i) $$
 
-are exactly what we want to calculate (due to the LOTUS) and correspond to the random variable g(X) where X is uniformly distributed on the support.
+are exactly what we want to calculate for Monte-Carlo Integration(due to the LOTUS) and correspond to the random variable f(X) where X is uniformly distributed on the support.
 
-Whatever the original variance of g(X) might be, we can see that the variance of the sampling distribution of the mean goes down as $1/n$ and thus of the standard deviation as $1/\sqrt{n}$ as we discovered when we compared it to the exact value as well.
+Whatever the original variance of f(X) might be, we can see that the variance of the sampling distribution of the mean goes down as $1/n$ and thus the standard error goes down as $1/\sqrt{n}$ as we discovered when we compared it to the exact value as well.
 
 Why is this important?
 

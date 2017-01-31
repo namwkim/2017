@@ -82,7 +82,7 @@ Lets try to think about the mathematics in the intuition which tells us that we 
 
 The area of the circle C can be obtained by computing a double integral like so:
 
-$$A = \int_x \int_y I_{\in C}(x, y) dx dy = \int \int_{\in C} f_{X,Y} (x,y) dx dy $$
+$$A = \int_x \int_y I_{\in C}(x, y) dx dy = \int \int_{\in C} dx dy $$
 
 where $I_{\in C} (x, y) = 1$ if
 $x,y \in C$ and $I_{\in C}(x) = 0$ if $x,y \notin C$.
