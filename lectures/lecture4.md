@@ -1,6 +1,6 @@
 ---
-shorttitle: "Lecture3"
-title: "Lecture 3: Sampling, The Laws, and Monte-Carlo"
+shorttitle: "Lecture4"
+title: "Lecture 4: Sampling Methods"
 layout: "default"
 noline: 1
 ---
