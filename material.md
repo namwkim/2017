@@ -42,4 +42,4 @@ Lab 1: **Frequentist Example**
 
 Lecture 3: **Law of Large Numbers, CLT, and Monte Carlo**
 
-[Slides, Notes and Readings](lectures/lecture3.html)
+[Slides, Notes and Readings](lectures/lecture3.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=bc46d8be-32ad-4c71-88a2-b0af4d71110b)
