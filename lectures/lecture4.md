@@ -12,3 +12,4 @@ noline: 1
 ## Notes
 
 - [Inverse Transform for sampling](../wiki/inversetransform.html)
+- [Rejection Sampling](../wiki/rejectionsampling.html)

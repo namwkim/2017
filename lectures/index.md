@@ -8,3 +8,4 @@ layout: "default"
 - [Lecture 2](lecture2.html) Distributions, Frequentist Stats and MLE
 - [Lab 1](lab1.html) A frequentist example
 - [Lecture 3](lecture3.html) Law of Large Numbers, CLT, and Monte Carlo
+- [Lecture 4](lecture4.html) Sampling
