@@ -2,129 +2,129 @@
 title: Terms Glossary and Index
 shorttitle: Terms
 layout: default
+noline: 1
 ---
 
-## Bayesian Regression
+### Bayesian Regression
 
-## Bayesian Statistics
+### Bayesian Statistics
 
-## Bernoulli Distribution
+### Bernoulli Distribution
 
-## Binomial Distribution
+### Binomial Distribution
 
-## Bootstrap
+### Bootstrap
 
-## Box's Loop
+### Box's Loop
 
-## Central Limit Theorem (CLT)
+### Central Limit Theorem (CLT)
 
-## Conditional Distribution
+### Conditional Distribution
 
-## Continuous Random Variable
+### Continuous Random Variable
 
-## Cumulative Distribution Function (CDF)
+### Cumulative Distribution Function (CDF)
 
-## Differentiation
+### Differentiation
 
-## Discrete Random Variable
+### Discrete Random Variable
 
-## Distribution
+### Distribution
 
-## Dynamical Systems
+### Dynamical Systems
 
-## Empirical Distribution
+### Empirical Distribution
 
-## Expectation
+### Expectation
 
-## Exponential Distribution
+### Exponential Distribution
 
-## Frequentist Statistics
+### Frequentist Statistics
 
-## Fundamental Rules of Probability
+### Fundamental Rules of Probability
 
-## Gaussian Processes
+### Gaussian Processes
 
-## Gaussian/Normal Distribution
+### Gaussian/Normal Distribution
 
-## Generalized Linear Models (GLMs)
+### Generalized Linear Models (GLMs)
 
-## Generative Adversarial Net (GAN)
+### Generative Adversarial Net (GAN)
 
-## Generative Models
+### Generative Models
 
-## Hidden Markov Chain (HMC)
+### Hidden Markov Chain (HMC)
 
-## Hierarchical Model
+### Hierarchical Model
 
-## Independence
+### Independence
 
-## Independent Identically Distributed (IID)
+### Independent Identically Distributed (IID)
 
-## Integration
+### Integration
 
-## Intersection
+### Intersection
 
-## Latent Variable
+### Latent Variable
 
-## Law of Large Numbers
+### Law of Large Numbers
 
-## Law of the Unconscious Statistician (LOTUS)
+### Law of the Unconscious Statistician (LOTUS)
 
-## Likelihood
+### Likelihood
 
-## Linear Regression
+### Linear Regression
 
-## Logistic Regression
+### Logistic Regression
 
-## Marginal Distribution
+### Marginal Distribution
 
-## Maximum Likelihood Estimation (MLE)
+### Maximum Likelihood Estimation (MLE)
 
-## Monte Carlo
+### Monte Carlo
 
-## Monte Carlo Markov Chains (MCMC)
+### Monte Carlo Markov Chains (MCMC)
 
-## Neural Network (NN)
+### Neural Network (NN)
 
-## Non-Parametric
+### Non-Parametric
 
-## Optimization (Stochastic)
+### Optimization (Stochastic)
 
-## Parametric
+### Parametric
 
-## Poison Distribution
+### Poison Distribution
 
-## Population
+### Population
 
-## Posterior
+### Posterior
 
-## Posterior Predictive
+### Posterior Predictive
 
-## Probability
+### Probability
 
-## Probability Density/Mass Function (PDF/PMF)
+### Probability Density/Mass Function (PDF/PMF)
 
-## Random Variable
+### Random Variable
 
-## Regularization
+### Regularization
 
-## Resampling
+### Resampling
 
-## Sample
+### Sample
 
-## Sampling
+### Sampling
 
-## Sampling Distribution
+### Sampling Distribution
 
-## Simulated Annealing
+### Simulated Annealing
 
-## Stochastic Gradient Descent (SGD)
+### Stochastic Gradient Descent (SGD)
 
-## Stochastic Processes
+### Stochastic Processes
 
-## Symmetry
+### Symmetry
 
-## Uniform Distribution
+### Uniform Distribution
 
-## Union
-
+### Union
