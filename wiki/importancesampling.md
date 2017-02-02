@@ -21,7 +21,7 @@ Choose a distribution $g(x)$, which is close to the function $f(x)$, but which i
 enough so that it is possible to generate random $x$-values from this distribution.
 The integral can now be re-written as:
 
-$$ E_f[h] = \int h(x) g(x) \frac{f(x)}{g(x)} dV $$
+$$ E_f[h] = \int h(x) g(x) \frac{f(x)}{g(x)} dx $$
 
 Therefore if we choose random numbers $x_i$ from distribution $g(x)$, we obtain
 

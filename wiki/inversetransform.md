@@ -8,12 +8,6 @@ layout: wiki
 
 
 
-```python
-%matplotlib inline
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-```
 
 
 
@@ -35,6 +29,7 @@ Clearly, for all this to work, we must be able to invert the cdf function, so th
 ## Let us formalize this:
 
 This is the process:
+
 1. get a uniform sample $u$ from $Unif(0,1)$
 1. solve for $x$ yielding a new equation $x=F^{-1}(u)$ where $F$ is the CDF of the distribution we desire. 
 1. repeat.
@@ -58,7 +53,7 @@ Thus we get the CDF and hence the pdf that we want to sample from!
 
  For example, lets assume we would like
 to generate random numbers that follow the exponential distribution
-$w(x) = \frac{1}{\lambda} e^{-x/\lambda}$ for $x\ge0$ and $w(x)=0$ 
+$f(x) = \frac{1}{\lambda} e^{-x/\lambda}$ for $x\ge0$ and $f(x)=0$ 
 otherwise. Following the recipe from above
 
 $$ u = \int_{0}^{x} \frac{1}{\lambda} e^{-x'/\lambda} dx'  = 1- e^{-x/\lambda} $$ 
@@ -171,3 +166,39 @@ Now we can use:
 $$x = r\,cos\theta, y = r\,sin\theta$$
 
 to generate samples for the normally distributed random variables $x$ and $Y$.
+
+We've hand-waved around a bit here in this derivation, so let us ask, what is the pdf in polar co-ordinates? Lets make a few observations.
+
+1. clearly, no matter what co-ordinates we use $\int dF =1$. In other words, no matter how we add slivers, the probabilities in these slivers must add to 1.
+2. one can think of cartesian co-ordinate slivers being histogram skyscrapers on a regular grid. In polar co-ordinates the slivers are arranged radially
+3. We have in terms of the pdfs:
+
+$$\int dx dy f(x,y) = \int dr d\theta f2(r, \theta) = \int dr d\theta f2r(r)\, f2t(\theta)$$
+
+And we have seen:
+
+fpolar(\theta) =Unif(0, 2\pi)
+
+We might be tempted to think that $f2r(r) = e^{-r^2/2}$. But this is not correct on two counts. First, its not even dimensionally right. Secondly, then you transform the $dxdy$ to polar , you get $rdrd\theta$.
+
+What this means is that :
+
+$$f2r(r) = re^{-r^2/2}$$
+
+This is called the Raleigh distribution.
+
+And now you can see how the transformation $s=r^2$ gives us an exponential in s. And this is why we could take $R^2 \sim Exp(1/2)$ without much ado..the exponential happily normalizes out to 1 dur to the $r$ multiplying the exponential in the pdf above.
+
+More generally, if $z=g(x)$ so that $x=g^{-1}(z)$, let us define the Jacobian $J(z)$ of the transformation  $x=g^{-1}(z)$ as the partial derivatives matrix of the transformation.
+
+Then:
+
+$$f_Z(z) = f_X(g^{-1}(z)) \times det(J(z))$$
+
+We can work this out with $z$ the polar co-ordinates and  $g^{-1}$ as $x=r\,cos(\theta)$ and $y=r\,sin(\theta)$, with $g$ as $r=\sqrt{x^2 + y^2}$, $tan(\theta) = y/x$.
+
+$$ J =  \binom{cos(\theta)\:sin(\theta)}{-r sin(\theta)\:r cos(\theta)}$$
+
+whose determinant is  $r$,  and thus
+
+$$f_{R, \Theta}(r, \theta) = f_{X,Y}(r cos(\theta), r sin(\theta)) \times r =  \frac{1}{\sqrt{2\pi}} e^{-(r cos(\theta))^2/2} \times \frac{1}{\sqrt{2\pi}} e^{-(r sin(\theta))^2/2} = \frac{1}{2\pi} \times e^{-r^2/2} \times r$$.

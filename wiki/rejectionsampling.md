@@ -115,6 +115,8 @@ The simple rejection sampling method has fundamental problems.
 
 For our simple example, it's quite easy to determine the supremum.  In practice, while you may know how to quickly (i.e. constant time) evaluate your function everywhere on the domain of interest, finding a bound very close to the  supremum may not be a feasible calculation.  In addition, even if you find a tight bound for the supremum, basic rejection sampling will still be very inefficient as you will reject many samples (especially in low density regions). 
 
+Furthermore, if you support is infinitely large, you are not going to be able to reject from an infinitely long box in finite time!
+
 This is a hard problem to solve and we will need other techniques to address this problem of **low acceptance probability**.
 
 However, it is possible to do a more efficient job while still taking advantage of the simplicity of rejection sampling.  Our modified technique will introduce a **proposal density** $g(x)$. This notion of a proposal density is one used in many sampling techniques, in different ways, but its importance will always lie in figuring ways to increase the acceptance rate.
@@ -122,10 +124,14 @@ However, it is possible to do a more efficient job while still taking advantage 
 The proposal density will have the following characteristics:
 
 - $g(x)$ is easy to sample from and (calculate the pdf)
-- Some $M$ exists so that $M \, g(x) > f(x)$ in your entire domain of interest
+- Some $M$ between 1 and $\infty$ exists so that $M \, g(x) > f(x)$ in your entire domain of interest
 - ideally $g(x)$ will be somewhat close to $f$ so that you'll sample more in high density regions  and much less in low density regions
 
-Its probably obvious that an optimal value for M is the supremum over your domain of interest of $f/g$.
+Its probably obvious that an optimal value for M is the supremum over your domain of interest of $f/g$. At that $x$ you will accept stuff with probability 1. In general you want $M$ as close to 1 as possible, since the probability of acceptance is $1/M$.
+
+You can see that this is the case by finding the proportion of samples from $g(x)$ that are accepted at each $x$ and then averaging over $x$:
+
+$$\int dx g(x) prop(x) =  \int dx g(x) \frac{f(x)}{Mg(x)} = \frac{1}{M}\int dx f(x) = \frac{1}{M}$$
 
 Once you've picked a proposal distribution g, your modified rejection sampling technique is as follows:
 
@@ -193,6 +199,9 @@ plt.hist(samples,bins=50, label=u'Samples');
 # plot our (normalized) function
 xvals=np.linspace(xmin, xmax, 1000)
 plt.plot(xvals, hinfo[0][0]*p(xvals), 'r', label=u'p(x)')
+plt.plot(xvals, hinfo[0][0]*g(xvals), 'k', label=u'g(x)')
+
+
 
 # turn on the legend
 plt.legend()
@@ -200,16 +209,23 @@ plt.legend()
 ```
 
 
-    Count 23809 Accepted 10000
+    Count 24359 Accepted 10000
 
 
 
 
 
-    <matplotlib.legend.Legend at 0x11659aa20>
+    <matplotlib.legend.Legend at 0x11748c2b0>
 
 
 
 
 ![png](rejectionsampling_files/rejectionsampling_6_2.png)
+
+
+
+
+```python
+
+```
 
