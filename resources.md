@@ -6,11 +6,6 @@ nav_include: 4
 noline: 1
 ---
 
-## Class Stuff
-
-- [Lectures and Labs](lectures/)
-- [Homework](homework/)
-
 ## Books
 
 The course is mostly self-contained, but reading a textbook will help you with your understanding.
@@ -28,6 +23,8 @@ The course is mostly self-contained, but reading a textbook will help you with y
 We will not be using R or Stan, but the principles remain the same.
 
 - [Wasserman's All of Statistics](http://www.stat.cmu.edu/~larry/all-of-statistics/)
+
+- [Shalizi's Advanced Data Analysis from an Elementary Point of View](http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
 
 ### Other useful books and sources
 

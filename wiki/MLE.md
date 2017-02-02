@@ -102,7 +102,7 @@ $$
 and thus:
 
 $$
-\est{\lambda_{MLE}} = \frac{1}{n}\sum_{i=1}^n x_i,
+\frac{1}{\est{\lambda_{MLE}}} = \frac{1}{n}\sum_{i=1}^n x_i,
 $$
 
 which is the sample mean of our sample. Usually one is not so lucky and one must use numerical optimization techniques.
