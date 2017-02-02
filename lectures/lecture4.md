@@ -13,3 +13,4 @@ noline: 1
 
 - [Inverse Transform for sampling](../wiki/inversetransform.html)
 - [Rejection Sampling](../wiki/rejectionsampling.html)
+- [Importance Sampling](../wiki/importancesampling.html)
