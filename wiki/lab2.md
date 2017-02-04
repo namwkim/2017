@@ -49,15 +49,15 @@ This diagram, taken from wikipedia, illustrates this theorem:
 
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e6/FTC_geometric.svg)
 
-** Q4. ** Integrate  $\int_{-\infty}^{\infty} e^{-x^2}$
+**Q4.** Integrate  $\int_{-\infty}^{\infty} e^{-x^2}$
 
-** Q5. ** What is the antiderivative of $x^2$; ie $\int x^2 dx$.
+**Q5.** What is the antiderivative of $x^2$; ie $\int x^2 dx$.
 
 ## Vectors
 
-I am going to assume that you are familiar with vectors like  ${\mathbf v}$, their dot produc ${\mathbf v} \cdot {\mathbf w}. 
+I am going to assume that you are familiar with vectors like  ${\bf v}$, and their dot product ${\bf v} \cdot {\bf w}$. 
 
-** Q6.** Write down the vector which has equal weight in all three directions, and is a unit vector (ie of length 1.)
+**Q6.** Write down the vector which has equal weight in all three directions, and is a unit vector (ie of length 1.)
 
 You can learn much more about vectors here http://www.feynmanlectures.caltech.edu/I_11.html .
 
@@ -82,7 +82,7 @@ The gradient will always give you the direction of the greatest change of a func
 
 We saw the Jacobian. The Hessian is a matrix of second derivatives, and can be used to probe curvature
 
-**Q9.** Calculate the Hessian of $$f(x) = x_1^2 + x_2^2$$. Make s 3D plot of this function to see what it looks like.
+**Q9.** Calculate the Hessian of $$f(x) = x_1^2 + x_2^2$$. Make a 3D plot of this function to see what it looks like.
 
 ## Continuity
 
@@ -96,10 +96,17 @@ The taylor series expansion for a function about a point a is given as
 
 $$f(x) = \sum_i  \frac{f^{(n)}(x-a)}{n!}x^n$$
 
-where $f^{(n)} is the nth derivative.
+where $f^{(n)}$ is the nth derivative.
 
 **Q11** Expand $e^x$ in a taylor series
 
 **Q12** Approximately calculate $1.05^5$ using a taylor series.
 
 **Q13** Show that a log likelihood function of one parameter $\theta$ is normally distributed near its maximum.
+
+
+
+```python
+
+```
+

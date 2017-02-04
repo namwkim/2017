@@ -26,7 +26,7 @@ Intuitively, smaller samples have less variance. And stratification lets us do d
 
 Start by considering a one-dimensional expectation, over some region $D$ (could be [0,1]):
 
-$$ \mu = \int_{D} h(x) f(x)\, dx $$
+$$ \mu = E_f[h] = \int_{D} h(x) f(x)\, dx $$
 
 where $f(x)$ is a pdf normalized over the support D.
 
@@ -57,7 +57,7 @@ $$\mu =  \sum_j p_j \int_{D_j} h(x) \frac{f(x)}{p_j} dx = \sum_j p_j \mu_j,$$
 
 where
 
-$$\mu_j = \int_{D_j} h(x) f_j(x) dx$$
+$$\mu_j = E_{f_j}[h] = \int_{D_j} h(x) f_j(x) dx$$
 
 is the expectation value under pdf $f_j$ of $h(x)$ in region $D_j$.
 
@@ -67,11 +67,11 @@ $$\hat{\mu_j} = \frac{1}{n_j} \sum_{x_ij \sim f_j} h(x_ij).$$
 
 Let us now define the stratified estimator of the overall expectation
 
-$$\hat{\mu_s} = \sum_j p_j \hat{mu_j}.$$
+$$\hat{\mu_s} = \sum_j p_j \hat{\mu_j}.$$
 
 Taking the expectation with respect to the sampling distribution then gives us:
 
-$$E_R[\hat{\mu_s}] = \sum_j p_j E_R[\hat{mu_j}] = \sum_j p_j \mu_j = \mu$$
+$$E_R[\hat{\mu_s}] = \sum_j p_j E_R[\hat{\mu_j}] = \sum_j p_j \mu_j = \mu$$
 
 and thus $\hat{\mu_s}$ is an unbiaded estimator of $\mu$. Yay! We are on the right track.
 
@@ -89,7 +89,7 @@ How does this variance compare to the variance  of the standrd Monte Carlo estim
 
 $$Var_R[\hat{\mu}] = \frac{\sigma^2}{N}$$
 
-where $\sigma^2$ if the population variance of $h(x)$ on all od $D$ with respect to pdf $f(x)$.
+where $\sigma^2$ is the population variance of $h(x)$ on all of $D$ with respect to pdf $f(x)$.
 
 $$Var_R[\hat{\mu}] = \frac{1}{N} \int_D (h(x) - \mu)^2 f(x) dx$$
 
