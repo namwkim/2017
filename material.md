@@ -15,6 +15,8 @@ noline: 1
 - [Videos](https://matterhorn.dce.harvard.edu/engage/ui/index.html#/2017/02/24932). You will find there
  a live feed for the current lecture!
 
+- [Zoom Lab Videos](https://vimeo.com/channels/1194246)
+
 ## Sequentially
 
 ---
@@ -31,6 +33,22 @@ Lecture 2: **Frequentist Stats**
 
 Lab 1: **Frequentist Example**
 
-[Solved and Unsolved](lectures/lab1.html)
+[Solved and Unsolved](lectures/lab1.html),
+[Part 1 Video](https://vimeo.com/201321508),[Part 2 Video](https://vimeo.com/201322530)
 
 ---
+
+### Week 2
+
+Lecture 3: **Law of Large Numbers, CLT, and Monte Carlo**
+
+[Slides, Notes and Readings](lectures/lecture3.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=bc46d8be-32ad-4c71-88a2-b0af4d71110b)
+
+Lecture 4: **Sampling Methods**
+
+[Slides and Notes](lectures/lecture4.html)
+[Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=51836d8c-95a2-48a7-b105-d0454e13fcdc)
+
+Lab2: **Stratified Sampling and Math**
+
+[Notes and Material](lectures/lab2.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=03b49382-125a-4002-9346-ff79f13ff201)
