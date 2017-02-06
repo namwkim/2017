@@ -10,3 +10,4 @@ layout: "default"
 - [Lecture 3](lecture3.html): Law of Large Numbers, CLT, and Monte Carlo
 - [Lecture 4](lecture4.html): Sampling
 - [Lab 2](lab2.html): Stratification and Math
+- [Lecture 5](lecture5.html): Sampling

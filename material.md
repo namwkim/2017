@@ -52,3 +52,11 @@ Lecture 4: **Sampling Methods**
 Lab2: **Stratified Sampling and Math**
 
 [Notes and Material](lectures/lab2.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=03b49382-125a-4002-9346-ff79f13ff201)
+
+---
+
+### Week 3
+
+Lecture 5: **Machine Learning**
+
+[Slides, Notes and Readings](lectures/lecture5.html)
