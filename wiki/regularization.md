@@ -6,6 +6,11 @@ noline: 1
 layout: wiki
 ---
 
+## Contents
+{:.no_toc}
+*  
+{: toc}
+
 
 
 
@@ -191,9 +196,9 @@ traintestlists=make_features(xtrain, xtest, degrees)
 ```
 
 
-## Regularization
+## Constraining parameters by penalty
 
-Upto now we have focussed on finding the polynomial with the right degree of complecity $d=*$ given the data that we have.
+Upto now we have focussed on finding the polynomial with the right degree of complexity $d^*$ given the data that we have.
 
 Let us now ask a different question: if we are going to fit the data with an expressive model such as 20th order polynomials, how can we **regularize** or smooth or restrict the choices of the kinds of 20th order polynomials that we allow in our fits. In other words, we are again trying to bring down the complexity of the hypothesis space, but by a different tack: a tack which prefers smooth polynomials over wiggly ones.
 
@@ -219,9 +224,11 @@ $$\cal{R}(h_j) =  \sum_{y_i \in \cal{D}} (y_i - h_j(x_i))^2 +\alpha \sum_{i=0}^j
 
 This new risk takes the empirical risk and adds a "penalty term" to it to minimize overfitting. The term is proportional to the sum of the squares of the coefficients and is positive, so it will keep their values down
 
-Notice that we are adding a term to the **training error**, once $\alpha$ is defined. The entire structure is similar to what we did to find the optimal $d=*$, with $\alpha$ being the analog of $d$. And thus we can use the same validation and cross-validation technology that we developed to estimate $d$.
+ The entire structure is similar to what we did to find the optimal $d=*$, with $\alpha$ being the analog of $d$. And thus we can use the same validation and cross-validation technology that we developed to estimate $d$.
 
 This technique is called **regularization** or **shrinkage** as it takes the coefficients $a_i$ towards smaller sizes. As you have seen earlier, for polynomials this corresponds to choosing smooth functions over wiggly functions. When $\alpha=0$ we have the regular polynomial regression problem, and if we are using 20th order polynomials we will wildly overfit. We are in the high variance zone. The problem with a non-zero $\alpha$ is called **ridge regression**. As $\alpha$ increases, the importance of the penalty term increases at the expense of the ERM term, and we are pushed to increase the smoothness of the polynomials. When $\alpha$ becomes very large the penalty term dominates and we get into the high bias zone. Thus $\alpha$ acts as a complexity parameter just like $d$ did, with high complexity being $\alpha \to 0$.
+
+### A toy example
 
 Even though we are not doing any proofs, let us illustrate the concept of regularization using a line fit to a sine wave. We fit a straight line to 3 points, choosing 100 such sets of 3 points from the data set.
 
@@ -261,12 +268,18 @@ axes[1].set_title("Regularized with $\\alpha=1.0$");
 
 
 
-![png](regularization_files/regularization_13_2.png)
+![png](regularization_files/regularization_14_2.png)
 
 
 In the left panel we plot unregularized straight line fits. The plot is hairy, since choosing 3 points from 200 between -1 and 1 dosent constrain the lines much at all. On the right panel, we plot the output of **Ridge** regression with $\alpha=1$. This corresponds to adding a term to the empirical risk of $\alpha\, (a_0^2 + a_1^2)$ where $a_0$ and $a_1$ are the intercept and slope of the line respectively. Notice that the lines are much more constrained  in this second plot. The penalty term has regularized the values of the intercept and slope, and forced the intercept to be closer to 0 and the lines to be flatter.
 
-### Regularization of the Romney model with Cross-Validation
+### Contrast with complexity parameter validation
+
+Notice that in regularization, we are adding a term to the **training error**, once $\alpha$ is defined. It is this term that is estimated..
+
+When we were fitting for the degree of the polynomial, there was no explicit added term, we just fit the regular model. But there, as with regularization, the choice of the hyperparameter was made by comparing validation risks which were calculated by taking the parameters found with fixed hyperparameters on the training set.
+
+## Regularization of the Romney model with Cross-Validation
 
 
 
@@ -319,7 +332,7 @@ for i, alpha in enumerate(alphas):
 
 
 
-![png](regularization_files/regularization_18_0.png)
+![png](regularization_files/regularization_20_0.png)
 
 
 As you can see, as we increase $\alpha$ from 0 to 1, we start out overfitting, then doing well, and then, our fits, develop a mind of their own irrespective of data, as the penalty term dominates the risk.
@@ -430,7 +443,7 @@ plot_coefficients(clf, r, alphawechoose)
 
 
 
-![png](regularization_files/regularization_26_0.png)
+![png](regularization_files/regularization_28_0.png)
 
 
 As we can see, the best fit model is now chosen from the entire set of 20th order polynomials, and a non-zero hyperparameter $\alpha$ that we fit for ensures that only smooth models amonst these polynomials are chosen, by setting most of the polynomial coefficients to something close to 0 (Lasso sets them exactly to 0).

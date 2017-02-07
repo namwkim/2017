@@ -6,6 +6,11 @@ noline: 1
 layout: wiki
 ---
 
+## Contents
+{:.no_toc}
+*  
+{: toc}
+
 
 
 
@@ -93,7 +98,7 @@ plt.plot(x,f,'.', alpha=0.3)
 
 
 
-![png](noisylearning_files/noisylearning_8_1.png)
+![png](noisylearning_files/noisylearning_9_1.png)
 
 
 Notice that our sampling of $x$ is not quite uniform: there are more points around $x$ of 0.7.
@@ -187,27 +192,31 @@ axes[1].legend(loc=4);
 
 
 
-![png](noisylearning_files/noisylearning_13_0.png)
+![png](noisylearning_files/noisylearning_14_0.png)
 
 
 ### Statement of the learning problem.
 
-Once we have done that, we can then intuitively say that, if we find a hypothesis $g$ that minimizes the cost or risk over the training set; this hypothesis *might* do a good job over the population that the training set was representative of, since the risk on the population ought to be similar to that on the training set, and thus small.
+Let us restate  the learning problem from [noiseless learning](noiseless_learning.html).
+
+If we find a hypothesis $g$ that minimizes the cost or risk over the training set (our sample), this hypothesis *might* do a good job over the population that the training set was representative of, since the risk on the population ought to be similar to that on the training set, and thus small.
 
 Mathematically, we are saying that:
 
 $$
 \begin{eqnarray*}
 A &:& R_{\cal{D}}(g) \,\,smallest\,on\,\cal{H}\\
-B &:& R_{out \,of \,sample} (g) \approx R_{\cal{D}}(g)
+B &:& R_{out} (g) \approx R_{\cal{D}}(g)
 \end{eqnarray*}
 $$
 
 In other words, we hope the **empirical risk estimates the out of sample risk well, and thus the out of sample risk is also small**.
 
-Indeed, as we can see below, $g_{20}$ does an excellent job on the population, not just on the sample.
+## Why go out-of-sample
 
-## Another reason for out-of-sample
+Clearly we want tolearn something about a population, a population we dont have access to. So far we have stayed within the constraints of our sample and just like we did in the case of monte-carlo, might want to draw all our conclusions from this sample.
+
+This is a bad idea.
 
 You probably noticed that I used weasel words like "might" and "hope" in the last section when saying that representative sampling in both training and test sets combined with ERM is what we need to learn a model. Let me give you a very simple counterexample: a prefect memorizer.
 
@@ -215,7 +224,7 @@ Suppose I construct a model which memorizes all the data points in the training 
 
 ### Stochastic Noise
 
-We saw in the diagram above that $g_{20}$ did a very good job in capturing the curves of the population. However, note that the data obtained from $f$, our target, was still quite smooth. Most real-world data sets are not smooth at all, because of various effects such as measurement errors, other co-variates, and so on. Such **stochastic noise** plays havoc with our fits, as we shall see soon.
+We saw before that $g_{20}$ did a very good job in capturing the curves of the population. However, note that the data obtained from $f$, our target, was still quite smooth. Most real-world data sets are not smooth at all, because of various effects such as measurement errors, other co-variates, and so on. Such **stochastic noise** plays havoc with our fits, as we shall see soon.
 
 Stochastic noise bedevils almost every data set known to humans, and happens for many different reasons. 
 
@@ -334,7 +343,7 @@ plt.legend(loc=4);
 
 In the figure above, one can see the scatter of the $y$ population about the curve of $f$. The errors of the 30 observation points ("in-sample") are shown as squares. One can see that observations next to each other can now be fairly different, as we descibed above.
 
-## Fitting a noisy model: the complexity of your hypothesis
+## Fitting a noisy model
 
 Let us now try and fit the noisy data we simulated above, both using straight lines ($\cal{H_1}$), and 20th order polynomials($\cal{H_{20}}$). 
 
@@ -344,7 +353,9 @@ $$y = f(x) + \epsilon\,,$$
 
 where $\epsilon$ is a **random** noise term that represents the stochastic noise. 
 
-Another way to think about a noisy $y$ is to imagine that our data is generated from a joint probability distribution $P(x,y)$. In our earlier case with no stochastic noise, once you knew $x$, if I were to give you $f(x)$, you could give me $y$ exactly. This is now not possible because of the noise $\epsilon$: we dont know exactly how much noise we have at any given $x$. Thus we need to model $y$ at a given $x$, $P(y \mid x)$, as well using a probability distribution (a bell curve in our example). Since $P(x)$ is also a probability distribution, we have:
+### Describing things probabilistically
+
+Another way to think about a noisy $y$ is to imagine that our data is generated from a joint probability distribution $P(x,y)$. In our earlier case with no stochastic noise, once you knew $x$, if I were to give you $f(x)$, you could give me $y$ exactly. This is now not possible because of the noise $\epsilon$: we dont know exactly how much noise we have at any given $x$. Thus we need to model $y$ at a given $x$, $P(y \mid x)$, as well using a probability distribution. Since $P(x)$ is also a probability distribution, we have:
 
 $$P(x,y) = P(y \mid x) P(x) .$$
 
@@ -550,6 +561,58 @@ axes[1].set_ylim([-1e12, 1e12]);
 
 In the right panel we plot the coefficients of the fit in $\cal{H}_{20}$. This is why we use the word "variance": the spread in the values of the middle coefficients about their means (dashed lines) is of the order $10^{10}$ (the vertical height of the bulges), with huge outliers!! The 20th order polynomial fits are a disaster!
 
+## Bias and Variance
+
+We have so far informally described two different concepts: bias and variance. Bias is deterministic error, the kind of error you get when your model is not expressive enough to describe the data. Variance describes the opposite problem, where it is too expressive.
+
+Every model has some bias and some variance. Clearly, you dont want either to dominate, which is something we'll worry about soon.
+
+Let us mathematically understand what bias and variance are, so that we can use these terms more precisely from now onwards. Follow carefully to see how our calculation mimics the code/process we used above.
+
+$$\renewcommand{\gcald}{g_{\cal D}}$$
+$$\renewcommand{\ecald}{E_{\cal{D}}}$$
+
+We had from [noiseless learning](noiseless_learning.html):
+
+$$R_{out}(h) =  E_{p(x)}[(h(x) - f(x))^2] = \int dx p(x)  (h(x) - f(x))^2 .$$
+
+In the presence of noise $\epsilon$ which we shall assume to be 0-mean, variance $\sigma^2$ noise, we have $y = f(x) + \epsilon$ and the above formula becomes:
+
+$$R_{out}(h) =  E_{p(x)}[(h(x) - y)^2] = \int dx p(x)  (h(x) - f(x) - \epsilon)^2 .$$
+
+Now let us use Empirical Risk minimization to fit on our training set. We come up with a best fit hypothesis $h = \gcald$, where $\cal{D}$ is our training sample.
+
+$$R_{out}(\gcald) =  E_{p(x)}[(\gcald(x) - f(x) - \epsilon)^2] $$
+
+Let us compute the expectation of this quantity with respect to the sampling distribution obtained by choosing different samples from the population. Note that we cant really do this if we have been only given one training set, but in this document, we have had access to the population and can thus experiment.
+
+Define:
+
+$$\langle  R \rangle = E_{\cal{D}} [R_{out}(\gcald)] =  E_{\cal{D}}E_{p(x)}[(\gcald(x) - f(x) - \epsilon)^2] $$
+
+$$
+\begin{eqnarray*}
+=& E_{p(x)}\ecald[(\gcald(x) - f(x) - \epsilon)^2]\\
+=& E_{p(x)}[\ecald[\gcald^2] +  f^2 + \epsilon^2 - 2\,f\,\ecald[\gcald]]
+\end{eqnarray*}
+$$
+
+Define:
+
+$$ \bar{g} = \ecald[\gcald] = (1/M)\sum_{\cal{D}} \gcald$$
+
+as the average "g" over all the fits (M of them) on the different samples, so that we can write, adding and subtracting $\bar{g}^2$:
+
+$$\langle  R \rangle =  E_{p(x)}[\ecald[\gcald^2] - \bar{g}^2 +  f^2 - 2\,f\,\bar{g} + \bar{g}^2 + \epsilon^2 ] = E_{p(x)}[\ecald[(\gcald - \bar{g})^2]  +  (f - \bar{g})^2 + \epsilon^2 ]$$
+
+Thus:
+
+$$\langle  R \rangle =  E_{p(x)}[\ecald[(\gcald - \bar{g})^2]] + E_{p(x)}[(f - \bar{g})^2] + \sigma^2$$
+
+The first term here is called the **variance**, and captures the squared error of the various fit g's from the average g, or in other words, the hairiness. The second term is called the **bias**, and tells us, how far the average g is from the original f this data came from. Finally the third term is the **stochastic noise**, the minimum error that this model will always have.
+
+Note that if we set the stochastic noise to 0 we get back the noiseless model we started out with. So even in a noiseless model, we do have bias and variance. This is because we still have sampling noise in such a model, and this is one of the sources of variance.
+
 ## So far?
 
 - you have learnt the basic formulation of the learning problem, the concept of a hypothesis space, and a strategy using minimization of distance (called cost or risk) to find the best fit model for the target function from this hypothesis space. 
@@ -566,9 +629,9 @@ Mathematically, we are saying that:
 $$
 \begin{eqnarray*}
 A &:& R_{\cal{D}}(g) \,\,smallest\,on\,\cal{H}\\
-B &:& R_{out \,of \,sample} (g) \approx R_{\cal{D}}(g)
+B &:& R_{out} (g) \approx R_{\cal{D}}(g)
 \end{eqnarray*}
 $$
 
 
-Well, we are scientists. Just hoping does not befit us. But we only have a sample. What are we to do?
+Well, we are scientists. Just hoping does not befit us. But we only have a sample. What are we to do? We can model the in-sample risk and out-of-sample risk. And we can use a test set to estimate our out of sample risk, as we see [here](testingtraining.html).

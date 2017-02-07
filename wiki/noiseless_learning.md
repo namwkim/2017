@@ -6,6 +6,11 @@ noline: 1
 layout: wiki
 ---
 
+## Contents
+{:.no_toc}
+*  
+{: toc}
+
 
 
 
@@ -121,7 +126,7 @@ plt.plot(x,f,'.', alpha=0.3)
 
 
 
-![png](noiseless_learning_files/noiseless_learning_11_1.png)
+![png](noiseless_learning_files/noiseless_learning_12_1.png)
 
 
 Notice that our sampling of $x$ is not quite uniform: there are more points around $x$ of 0.7.
@@ -221,7 +226,7 @@ axes[1].legend(loc=4);
 
 
 
-![png](noiseless_learning_files/noiseless_learning_16_0.png)
+![png](noiseless_learning_files/noiseless_learning_17_0.png)
 
 
 The lightly shaded squares in the right panel plot are the in-sample $\cal{D}$ of 30 points given to us. Let us then pretend that we have forgotten the curve that the Lord gave us. Thus, all we know is the blue points on the plot on the right, and we have no clue about what the original curve was, nor do we remember the original "population".
@@ -272,7 +277,7 @@ plt.legend(loc=4);
 
 
 
-![png](noiseless_learning_files/noiseless_learning_21_0.png)
+![png](noiseless_learning_files/noiseless_learning_22_0.png)
 
 
 How did we calculate the best fit? We'll come to that in a bit, but in the meanwhile, lets formalize and generalize the notion of "best fit line amongst lines" a bit.
@@ -286,7 +291,7 @@ In this set-up, what we have done in the code and plot above is this: we have fo
 The hypothesis space is a concept we can use if we want to capture the **complexity** of a model you use to fit data. For example, since quadratics are more complex functions than straight lines (they curve more), $\cal{H}_2$ is more complex than $\cal{H}_1$. 
 
 
-## Deterministic Error or Bias
+### Deterministic Error or Bias
 
 Notice from the figure above that models in $\cal{H}_1$, i.e., straight lines, and the best-fit straight line $g_1$ in particular, do not do a very good job of capturing the curve of  the data (and thus the underlying function $f$ that we are trying to approximate. Consider the more general case in the figure below, where a curvy $f$ is approximated by a function $g$ which just does not have the wiggling that $f$ has. 
 
@@ -310,7 +315,6 @@ g20 = np.poly1d(np.polyfit(x[indexes],f[indexes],20))
 ```
 
 
-    //anaconda/envs/py35/lib/python3.5/site-packages/numpy/lib/polynomial.py:595: RankWarning: Polyfit may be poorly conditioned
 
 
 
@@ -323,7 +327,7 @@ plt.legend(loc=4);
 
 
 
-![png](noiseless_learning_files/noiseless_learning_28_0.png)
+![png](noiseless_learning_files/noiseless_learning_29_0.png)
 
 
 Voila! You can see the 20th order polynomial does a much better job of tracking the points, because of the wiggle room it has in making a curve "go near or through" all the points as opposed to a straight line, which well, cant curve. Thus it would seem that $\cal{H}_{20}$ might be a better candidate hypothesis set from which to choose a best fit model. 
@@ -349,7 +353,7 @@ plt.title("Bias");
 
 
 
-![png](noiseless_learning_files/noiseless_learning_30_0.png)
+![png](noiseless_learning_files/noiseless_learning_31_0.png)
 
 
 As you can see the **bias or approximation error** is much smaller for $g_{20}$.
@@ -358,7 +362,7 @@ Is $g_{20}$ the best model for this data from all possible models? Indeed, how d
 
 We have used the python function `np.polyfit` to find $g_{1}$ the best fit model in $\cal{H_1}$ and $g_{20}$ the best fit model in $\cal{H_{20}}$, but how did we arrive at that conclusion? This is the subject of the next section. 
 
-### How to learn the best fit model in a hypothesis space
+## How to learn the best fit model in a hypothesis space
 
 Let's understand in an intuitive sense, what it means for a function to be a good fit to the data. Lets consider, for now, only the hypothesis space $\cal{H}_{1}$, the set of all straight lines. In the figure below, we draw against the data points (in red) one such line $h_1(x)$ (in red).
 
@@ -372,7 +376,7 @@ The next question that then arises is this: how exactly we define the measure of
 
 Thus we must use a positive estimate of the distance as our measure. We could take either the absolute value of the distance, $\vert y_i - h_1(x_i) \vert$, or the square of the distance as our measure, $(y_i - h_1(x_i))^2$. Both are reasonable choices, and we shall use the squared distance for now. (Now its probably clear to you why we defined bias in the last section as the pointwise square of the distance).
 
-We sum this measure up over all our data points, to create whats known as the **error functional** or **risk functional** (also just called **error*, **cost**, or **risk**) of using line $h_1(x)$ to fit our points $y_i \in \cal{D}$ (this notation is to be read as "$y_i$ in $\cal{D}$") :
+We sum this measure up over all our data points, to create whats known as the **error functional** or **risk functional** (also just called **error**, **cost**, or **risk**) of using line $h_1(x)$ to fit our points $y_i \in \cal{D}$ (this notation is to be read as "$y_i$ in $\cal{D}$") :
 
 $$ R_{\cal{D}}(h_i(x)) = \frac{1}{N} \sum_{y_i \in \cal{D}} (y_i - h_1(x_i))^2 $$
 
@@ -400,7 +404,7 @@ $$ g(x) = \arg\min_{h(x) \in \cal{H}} R_{\cal{D}}(h(x)),$$
 
 where $\cal{H}$ is a general hypothesis space of functions.
 
-## The Structure of Learning
+### The Structure of Learning
 
 We have a target function $f(x)$ that we do not know. But we do have a sample of data points from it, $(x_1,y_1), (x_2,y_2), ..., (x_n,y_n)$. We call this the **sample** or **training examples** $\cal{D}$. We are interested in using this sample to estimate a function $g$ to approximate the function $f$, and which can be used for prediction at new data points, or on the entire population, also called **out-of-sample prediction**. 
 
@@ -412,19 +416,17 @@ Here our learner is called **Polynomial Regression**, and it takes a hypothesis 
 
 ![](images/BasicModel.png)
 
-### Empirical Risk Minimization
+### Out-of-Sample and in-sample
 
-We write $g \approx f$, or $g$ is the **estimand** of $f$.In statistics books you will see $g$ written as $\hat{f}$. This process is called **Empirical Risk Minimization** (ERM) as we minimize the cost measure over the "empirically observed" training examples or points.
+We write $g \approx f$, or $g$ is the **estimand** of $f$.In statistics books you will see $g$ written as $\hat{f}$. 
 
 Why do we think that this might be a good idea? What are we really after?
 
-What we'd like to do is **make good predictions**. In the language of cost, what we are really after is to minimize the cost **out-of-sample**, on the population at large. But this presents us with a conundrum: **how can we minimize the risk on points we havent yet seen**?
+What we'd like to do is **make good predictions**. In the language of cost, what we are really after is to minimize the cost **out-of-sample**, on the **population** at large. But this presents us with a conundrum: *how can we minimize the risk on points we havent yet seen*?
 
-This is why we (a) minimize the risk on the set of points that we have, doing ERM to find $g$ and then (b) hope that once we have found our best model $g$, our risk does not particularly change out-of-sample, or when using a different set of points
+This is why we (a) minimize the risk on the set of points that we have to find $g$ and then (b) hope that once we have found our best model $g$, our risk does not particularly change out-of-sample, or when using a different set of points
 
 We are, as is usual in statistics, **drawing conclusions about a population from a sample**. 
-
-### The role of sampling
 
 Intuitively, to do this, we need to ask ourselves, how representative is our sample? Or more precisely, how representative is our sample of our training points of the population (or for that matter the new x that we want to predict for)? 
 
@@ -452,7 +454,25 @@ In our example, if we only want to use $g$, our estimand of $f$ to predict for l
 
 Our red points seem to follow our (god given) histogram well.
 
-### Statement of the learning problem.
+### The relation to the Law of Large Numbers.
+
+The process of minimization we do is called **Empirical Risk Minimization** (ERM) as we minimize the cost measure over the "empirically observed" training examples or points. But, on the assumption that we  were given a training set representative of the population, ERM is just an attempt use of the law of large numbers.
+
+What we really want to calculate is:
+
+$$R_{out}(h) =  E_{p(x)}[(h(x) - f(x))^2] = \int dx p(x)  (h(x) - f(x))^2 .$$
+
+As usual we do not have access to the population but just some samples and thus we want to do something like:
+
+$$R_{out}(h) = \lim_{n \to \infty} \frac{1}{n} \sum_{x_i \sim p(x)} (h(x_i) - f(x_i))^2 = \lim_{n \to \infty} \frac{1}{n} \sum_{x_i \sim p(x)} (h(x_i) - y_i)^2.$$
+
+We do not have an infinitely large training "sample". On the assumption that its representative (i.e. drawn from $p(x)$) we calculate
+
+$$R_{\cal{D}}(h) =  \sum_{x_i \in \cal{D}} (h(x_i) - y_i)^2.$$
+
+We could calculate the usual mean of sample means and all that, and shall see later that it is these quantities that are related to bias and variance.
+
+## Statement of the learning problem.
 
 Once we have done that, we can then intuitively say that, if we find a hypothesis $g$ that minimizes the cost or risk over the training set; this hypothesis *might* do a good job over the population that the training set was representative of, since the risk on the population ought to be similar to that on the training set, and thus small.
 
@@ -461,7 +481,7 @@ Mathematically, we are saying that:
 $$
 \begin{eqnarray*}
 A &:& R_{\cal{D}}(g) \,\,smallest\,on\,\cal{H}\\
-B &:& R_{out \,of \,sample} (g) \approx R_{\cal{D}}(g)
+B &:& R_{out} (g) \approx R_{\cal{D}}(g)
 \end{eqnarray*}
 $$
 
@@ -480,5 +500,5 @@ plt.legend(loc=4);
 
 
 
-![png](noiseless_learning_files/noiseless_learning_45_0.png)
+![png](noiseless_learning_files/noiseless_learning_46_0.png)
 

@@ -6,6 +6,11 @@ noline: 1
 layout: wiki
 ---
 
+## Contents
+{:.no_toc}
+*  
+{: toc}
+
 
 
 
@@ -162,11 +167,11 @@ ytest = df.y[itest].values
 
 ## Validation
 
-There is a problem with the process above which is not apparent at first look. What we have done in picking a given $d$ as the best hypothesis is that we have used the test set as a training set. How?
+A separate validation set is needed because what we have done in picking a given polynomial degree $d$ as the best hypothesis is that we have used the test set as a training set. How?
 
 Our process used the training set to fit for the **parameters**(values of the coefficients) of the polynomial of given degree $d$ based on minimizing the traing set error (empirical risk minimization). We then calculated the error on the test set at that $d$. If we go further and choose the best $d$ based on minimizing the test set error, we have then "fit for" $d$ on the test set. We will thus call $d$ a **hyperparameter** of the model.
 
-In this case, the test-set error will underestimate the true out-of-sample error (for a proof of this see Abu-Mostafa, Yaser S., Malik Magdon-Ismail, and Hsuan-Tien Lin. Learning from data. AMLBook, 2012.). Furthermore, we have **contaminated the test set** by fitting for $d$ on it; it is no longer a true test set.
+In this case, the test-set error will underestimate the true out-of-sample error. Furthermore, we have **contaminated the test set** by fitting for $d$ on it; it is no longer a true test set.
 
 Thus, we must introduce a new **validation set** on which the complexity parameter $d$ is fit, and leave out a test set which we can use to estimate the true out-of-sample performance of our learner. The place of this set in the scheme of things is shown below:
 
@@ -182,7 +187,19 @@ The validation process is illustrated in these two figures. We first loop over a
 
 Having picked the hyperparameter $d_\*$, we retrain using the hypothesis set $\cal{H_\*}$ on the entire old training-set to find the parameters of the polynomial of order $d_\*$ and the corresponding best fit hypothesis $g_\*$. Note that we left the minus off the $g$ to indicate that it was trained on the entire old traing set. We now compute the test error on the test set as an estimate of the test risk $\cal{E_{test}}$.
 
-Thus the **validation** set if the set on which the hyperparameter is fit. This method of splitting the data $\cal{D}$ is called the **train-validate-test** split.
+Thus the **validation** set is the set on which the hyperparameter is fit. This method of splitting the data $\cal{D}$ is called the **train-validate-test** split.
+
+### Properties of the validation set
+
+First assume that the validation set is acting like a test set. then, for the same reasons as in the case of a test set, the validation risk or error is an unbiased estimate of the out of sample risk. Secondly, the Hoeffding bound for a validation set is then for the same reason identical to that of the test set.
+
+More often though the validation set is used in a model selection process. Here we wish to choose the complexity parameter $d$, something we **wrongly** already attempted to do on our previous test set.
+
+Notice that the process of validation consists of fixing $d$ and finding the best fit $g^\*$ on the training set. We then calculate as many risks as our parameter grid on the validation set with the different fit hypothesis, and choose the $d, g^\*$ combination with the lowest validation set risk. Now, $R_{val}(g^{-\*}, d^\*)$ also has an optimistic bias, and its Hoeffding bound must now take into account the grid-size as the effecting size of the hypothesis space. This size from hyperparameters is typically a smaller size than that from parameters.
+
+We finally now retrain on the entire train+validation set using the appropriate  $(g^{-\*}, d^\*)$ combination. This works as training a given model with more data typically reduces the risk even further. (One can show this using learning curves but thats out of our scope).
+
+### Working it out
 
 We carry out this process for one training/validation split below. Note the smaller size of the new training set. We hold the test set at the same size.
 
@@ -272,7 +289,7 @@ print(mindeg)
 
 
 
-![png](validation_files/validation_14_1.png)
+![png](validation_files/validation_15_1.png)
 
 
 Lets do this again, choosing a new random split between training and validation data: 
@@ -334,7 +351,7 @@ print(mindeg)
 
 
 
-![png](validation_files/validation_17_1.png)
+![png](validation_files/validation_18_1.png)
 
 
 This time the validation error minimizing polynomial degree might change! What happened?
@@ -343,7 +360,7 @@ This time the validation error minimizing polynomial degree might change! What h
 
 ### The problem
 
-1. Since we are dealing with small data sizes here, you should worry that a given split exposes us to the peciliarity of the data set that got randomly chosen for us. This naturally leads us to want to choose multiple such random splits and somehow average over this process to find the "best" validation minimizing polynomial degree or complexity $d$.
+1. Since we are dealing with small data sizes here, you should worry that a given split exposes us to the peculiarity of the data set that got randomly chosen for us. This naturally leads us to want to choose multiple such random splits and somehow average over this process to find the "best" validation minimizing polynomial degree or complexity $d$.
 2. The multiple splits process also allows us to get an estimate of how consistent our prediction error is: in other words, just like in the hair example, it gives us a distribution. So far we have been channeling the hair through the bootstrap, but choosing multiple splits  is another way to get different training samples..
 3. Furthermore the validation set that we left out has two competing demands on it. The larger the set is, the better is our estimate of the out-of-sample error. So we'd like to hold out as much as possible. But the smaller the validation set is, the more data we have to train ourmodel on. Thus we can fit a better, more expressive model. We want to balance these two desires, and additionally, not be exposed to any peculiarities that might randomly arise in any single train-validate split of the old training set.
 
@@ -359,6 +376,10 @@ For each fold, after training the model, we calculate the risk or error on the r
 
 Note that the number of folds is equal to the number of splits in the data. For example, if we have 5 splits, there will be 5 folds. To illustrate cross-validation consider below fits in $\cal{H}_0$ and $\cal{H}_1$ (means and straight lines) to a sine curve, with only 3 data points.
 
+We have described cross-validation here from the perspective of sensibly fitting for the complexity hyperparameter $d$. But we can use it just like a pure validation set as well, just making sure we arent getting strange results due to a wierdly sampled validation set. In that case, (it can also shown that) **cross-validation error is an unbiased estimate of the out of sample-error**.
+
+Notice  that just like the bootstraps we do in frequentist inference, **cross-validation is a re-sampling method**. Indeed, a question might be, why not use bootstrap instead. See http://stats.stackexchange.com/questions/18348/differences-between-cross-validation-and-bootstrapping-to-estimate-the-predictio , and note that the so-called "out-of-bag" errors from "bagging" in random forests utilizes the bootstrap.
+
 ### The entire description of K-fold Cross-validation
 
 We put thogether this scheme to calculate the error for a given polynomial degree $d$ with the method we used earlier to choose a model given the validation-set risk as a function of $d$:
@@ -371,8 +392,6 @@ We put thogether this scheme to calculate the error for a given polynomial degre
 5. We finally use that value to make the final fit in $\cal{H}_*$ on the entire old training set.
 
 ![caption](images/train-cv3.png)
-
-It can also shown that **cross-validation error is an unbiased estimate of the out of sample-error**.
 
 Let us now do 4-fold cross-validation on our Romney votes data set. We increase the complexity from degree 0 to degree 20. In each case we take the old training set, split in 4 ways into 4 folds, train on 3 folds, and calculate the validation error on the ramining one. We then average the erros over the four folds to get a cross-validation error for that $d$. Then we did what we did before: find the hypothesis space $\cal{H_*}$ with the lowest cross-validation error, and refit it using the entire training set. We can then use the test set to estimate $E_{out}$.
 
@@ -427,9 +446,15 @@ plt.yscale("log")
 
 
 
-![png](validation_files/validation_29_1.png)
+![png](validation_files/validation_30_1.png)
 
 
 We see that the cross-validation error minimizes at a low degree, and then increases. Because we have so few data points the spread in fold errors increases as well.
 
 So now we have an average out of sample error, matched to the in-sample error, and error bars telling is that  the entire order 1-8 polynomial region (roughly) is trustable...
+
+### What does Cross Validation do?
+
+One can think about the validation process as one that estimates $R_{out}$ directly, on the validation set. It's critical use is in the model selection process. Once you do that you can estimate $R_{out}$ using the test set as usual, but now you have also got the benefit of a robust average and error bars.
+
+One key subtlety to remember about cross-validation is that in the risk averaging process, you are actually averaging over different $g^-$ models, with different parameters. You arrive at the least risk for the hyperparameter and then refit on the entire training set, which will likely give you slightly different parameters as well.

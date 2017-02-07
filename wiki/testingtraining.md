@@ -1,10 +1,15 @@
 ---
-title: Introducing the Test Set
-shorttitle: Introducing the Test Set
+title: Learning bounds and the Test set
+shorttitle: Learning bounds and the Test set
 notebook: testingtraining.ipynb
 noline: 1
 layout: wiki
 ---
+
+## Contents
+{:.no_toc}
+*  
+{: toc}
 
 
 
@@ -93,7 +98,7 @@ plt.plot(x,f,'.', alpha=0.3)
 
 
 
-![png](testingtraining_files/testingtraining_7_1.png)
+![png](testingtraining_files/testingtraining_8_1.png)
 
 
 Notice that our sampling of $x$ is not quite uniform: there are more points around $x$ of 0.7.
@@ -178,7 +183,7 @@ axes[1].legend(loc=4);
 
 
 
-![png](testingtraining_files/testingtraining_10_0.png)
+![png](testingtraining_files/testingtraining_11_0.png)
 
 
 ## Testing and Training Sets
@@ -216,7 +221,7 @@ We ARE taking a hit on the amount of data we have to train our model. The more d
 
 At this point you are thinking: the test set is just another sample of the population, just like the training set. What guarantee do we have that it approximates the out-of-sample error well? And furthermore, if we pick 6 out of 30 points as a test set, why would you expect the estimate to be any good?
 
-We wont prove it here, but the test set error is a good estimate of the out of sample error, especially for larger and larger test sets. You are right to worry that 6 points is perhaps too few, but thats what we have for now, and we shall work with them.
+We will kind-of hand wavingly show later that the test set error is a good estimate of the out of sample error, especially for larger and larger test sets. You are right to worry that 6 points is perhaps too few, but thats what we have for now, and we shall work with them.
 
 We are **using the training set then, as our in-sample set, and the test set as a proxy for out-of-sample.**.
 
@@ -258,10 +263,10 @@ axes[1].legend(loc="lower right")
 
 
 
-![png](testingtraining_files/testingtraining_15_1.png)
+![png](testingtraining_files/testingtraining_16_1.png)
 
 
-### A short digression about scikit-learn
+## A digression about scikit-learn
 
 Scikit-learn is the main python machine learning library. It consists of many learners which can learn models from data, as well as a lot of utility functions such as `train_test_split`. It can be used in python by the incantation `import sklearn`.
 
@@ -280,6 +285,8 @@ $$ x \rightarrow 1, x, x^2, x^3, ..., x^d $$
 for some power $d$. Our job then is to **fit** for the coefficients of these features in the polynomial
 
 $$ a_0 + a_1 x + a_2 x^2 + ... + a_d x^d. $$
+
+### Transformers in  sklearn
 
 In other words, we have transformed a function of one feature, into a (rather simple) **linear** function of many features. To do this we first construct the estimator as `PolynomialFeatures(d)`, and then transform these features into a d-dimensional space using the method `fit_transform`.
 
@@ -418,6 +425,27 @@ PolynomialFeatures(2).fit_transform(xtrain.reshape(-1,1))
 
 
 
+### Fitting in sklearn
+
+Once again, lets see the structure of scikit-learn needed to make these fits. `.fit` always takes two arguments:
+
+`estimator.fit(Xtrain, ytrain)`.
+
+Here `Xtrain` must be in the form of an array of arrays, with the inner array each corresponding to one sample, and whose elements correspond to the feature values for that sample. (This means that the 4th element for each of these arrays, in our polynomial example, corresponds to the valueof $x^3$ for each "sample" $x$). The `ytrain` is a simple array of responses..continuous for regression problems, and categorical values or 1-0's for classification problems.
+
+
+![reshape](images/sklearn2.jpg)
+
+The test set `Xtest` has the same structure, and is used in the `.predict` interface. Once we have fit the estimator, we predict the results on the test set by:
+
+`estimator.predict(Xtest)`.
+
+The results of this are a simple array of predictions, of the same form and shape as `ytest`.
+
+A summary of the scikit-learn interface can be found here:
+
+http://nbviewer.jupyter.org/github/jakevdp/sklearn_pycon2015/blob/master/notebooks/02.2-Basic-Principles.ipynb#Recap:-Scikit-learn's-estimator-interface
+
 Lets put this alltogether. Below we write a function to create multiple datasets, one for each polynomial degree:
 
 
@@ -434,7 +462,7 @@ def make_features(train_set, test_set, degrees):
 ```
 
 
-### How do training and testing error change with complexity?
+## How do training and testing error change with complexity?
 
 You will recall that the big question we were left with earlier is: what order of polynomial should we use to fit the data? Which order is too biased? Which one has too much variance and is too complex? Let us try and answer this question.
 
@@ -459,17 +487,6 @@ error_test=np.empty(len(degrees))
 traintestlists=make_features(xtrain, xtest, degrees)
 ```
 
-
-#### The structure of `scikit-learn`
-
-Once again, lets see the structure of scikit-learn needed to make these fits. `.fit` always takes two arguments:
-
-`estimator.fit(Xtrain, ytrain)`.
-
-Here `Xtrain` must be in the form of an array of arrays, with the inner array each corresponding to one sample, and whose elements correspond to the feature values for that sample. (This means that the 4th element for each of these arrays, in our polynomial example, corresponds to the valueof $x^3$ for each "sample" $x$). The `ytrain` is a simple array of responses..continuous for regression problems, and categorical values or 1-0's for classification problems.
-
-
-![reshape](images/sklearn2.jpg)
 
 
 
@@ -513,12 +530,6 @@ traintestlists[3]['train'], ytrain
 
 
 
-The test set `Xtest` has the same structure, and is used in the `.predict` interface. Once we have fit the estimator, we predict the results on the test set by:
-
-`estimator.predict(Xtest)`.
-
-The results of this are a simple array of predictions, of the same form and shape as `ytest`.
-
 
 
 ```python
@@ -545,6 +556,8 @@ traintestlists[3]['test'], ytest
              0.74855785]))
 
 
+
+### Estimating the out-of-sample error
 
 We can then use `mean_squared_error` from `sklearn` to calculate the error between the predictions and actual `ytest` values. Below we calculate this error on both the training set (which we already fit on) and the test set (which we hadnt seen before), and plot how these errors change with the degree of the polynomial.
 
@@ -590,12 +603,14 @@ print("errtest",mean_squared_error(ytest, pred_on_test19))
 
 You can see that the test set error is larger, corresponding to an overfit model thats doing very well on some points and awful on other.
 
+
+### Finding the appropriate complexity
+
 Lets now carry out this minimization systematically for each polynomial degree d.
 
 
 
 ```python
-#your code here
 for d in degrees:#for increasing polynomial degrees 0,1,2...
     Xtrain = traintestlists[d]['train']
     Xtest = traintestlists[d]['test']
@@ -630,7 +645,7 @@ plt.yscale("log")
 
 
 
-![png](testingtraining_files/testingtraining_42_0.png)
+![png](testingtraining_files/testingtraining_44_0.png)
 
 
 The graph shows a very interesting structure. The training error decreases with increasing degree of the polynomial. This ought to make sense given what you know now: one can construct an arbitrarily complex polynomial to fit all the training data: indeed one could construct an order 24 polynomial which perfectly interpolates the 24 data points in the training set. You also know that this would do very badly on the test set as it would wiggle like mad to capture all the data points. And this is indeed what we see in the test set error. 
@@ -643,14 +658,71 @@ Thus the test set error first decreases as the model get more expressive, and th
 
 Keep in mind that as you see in the plot above this minimum can be shallow: in this case any of the low order polynomials would be "good enough".
 
+## Is this still a test set?
+
 But something should be troubling you about this discussion. We have made no discussion on the error bars on our error estimates, primarily because we have not carried out any resampling to make this possible. 
 
 But secondly we seem to be "visually fitting" a value of $d$. It cant be kosher to use as a test set something you did some fitting on...
 
+We have contaminated our test set. The moment we **use it in the learning process, it is not a test set**.
+
 The answer to the second question is to use a validation set, and leave a separate test set aside. The answer to the first is to use cross-validation, which is a kind of resampling method that uses multiple validation sets!
 
-### Summary of scikit-learn interface
+TO make some of these concepts more concrete, let us understand the mathematics behind finite sized samples and the learning process.
 
-Can be found here:
+### Learning from finite sized samples
 
-http://nbviewer.jupyter.org/github/jakevdp/sklearn_pycon2015/blob/master/notebooks/02.2-Basic-Principles.ipynb#Recap:-Scikit-learn's-estimator-interface
+If we have very large samples, the law of large numbers tells us that we can estimate expectations nicely by making sample averages.
+
+However, we rarely have very large samples in learning situations (unlike when we are looking for posteriors). But, we can use Hoeffding's inequality to understand how our sample quantities differ from the population ones.
+
+Hoeffding's inequality applies to the situation where we have a population of binary random variables with fraction $\mu$ of things of one type (heads vs tails, red vs green). We do not have access to this population, but rather, to a sample drawn with replacement from this population, where the fraction is $\nu$.
+
+Then (where the probability can be thought of as amongst many samples):
+
+$$P(\vert \nu - \mu \vert > \epsilon) \le 2e^{-2\epsilon^2 N}$$
+
+where N is the size of the sample. Clearly the sample fraction approaches the population fraction as N gets very large.
+
+To put this in the context of the learning problem for a hypothesis $h$, identify heads(1) with $h(x_i) \ne f(x_i)$ at sample $x_i$, and tails(0) otherwise. Then $\mu$ is the error rate (also called the 1-0 loss) in the population, which we dont know, while $\nu$ is the same for the sample. It can be shown that similar results hold for the mean-squared error.
+
+Then one can say:
+
+$$P(\vert R_{in}(h) - R_{out}(h) \vert > \epsilon) \le 2e^{-2\epsilon^2 N}$$
+
+Now notice that we fit a $h=g$ on the  training sample. This means that we see as many hypothesis as there are in out hypothesis space. Typically this is infinite, but learning theory allows us to consider a finite effective hypothesis space size, as most hypothesis are not that different from each other. (This is formalized in VC theory, definitely out of scope for this class). 
+
+The problem here is that the Hoeffding inequality holds ONCE we have picked a hypothesis $h$, as we need it to label the 1 and 0s. But over the training set we one by one pick all the models in the hypothesis space, before discarding all but one. Thus Hoeffding's inequality does not hold.
+
+However what you can do is this: since the best fit $g$ is one of the $h$ in the hypothesis space $\cal{H}$,  $g$ must be either $h_1$ OR $h_2$ OR....and there are say **effectively** M such choices.
+
+Then:
+
+$$P(\vert R_{in}(g) - R_{out}(g) \vert \ge \epsilon) <= \sum_{h_i \in \cal{H}}  P(\vert R_{in}(h_i) - R_{out}(h_i) \vert \ge \epsilon) <=  2\,M\,e^{-2\epsilon^2 N}$$
+
+Thus this tells us that for $N >> M$ our in-sample risk and out-of-sample risk converge asymptotically and that  minimizing our in-sample risk can be used as a proxy for minimizing the unknown out-of-sample risk.
+
+Thus we do not have to hope any more and learning is feasible.
+
+This also tells us something about complexity. M is a measure of this complexity, and it tells us that our bound is worse for more complex hypothesis spaces. This is our notion of overfitting.
+
+The Hoeffding inequality can be repharased. Pick a  tolerance $\delta$. Then, note that with probability $1 - 2\,M\,e^{-2\epsilon^2 N}$,  $\vert R_{out} - R_{in} \vert < \epsilon$. This means
+
+$$R_{out} <= R_{in} + \epsilon$$
+
+Now let $\delta =  2\,M\,e^{-2\epsilon^2 N}$.
+
+Then, **with probability** $1-\delta$:
+
+$$R_{out} <= R_{in} + \sqrt{\frac{1}{2N}ln(\frac{2M}{\delta})}$$
+
+### What about the test set?
+
+The bound above can now be used to understand why the test set idea is a good one. One objection to using a test set might be that it just seems to be another sample like the training sample. What so great about it? How do we know that low test error means we generalize well? 
+
+The key observation here is that the test set is looking at only one hypothesis because the fitting is already done on the training set. So $M=1$ for this sample, and the "in-test-sample" error approaches the population error much faster! 
+Also, the test set does not have an optimistic bias like the training set, which is why the training set bound had the larger effective M factor.
+
+This is also why, once you start fitting for things like the complexity parameter on the test set, you cant call it a test set any more since we lose this tight guarantee.
+
+Finally, a test set has a cost. You have less data in the training set and must thus fit a less complex model.

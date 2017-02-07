@@ -7,7 +7,7 @@ noline: 1
 
 ## Slides
 
-- Still to come
+- [PDF](../slides/lecture5.pdf)
 
 ## Notes
 
