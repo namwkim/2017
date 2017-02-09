@@ -59,4 +59,9 @@ Lab2: **Stratified Sampling and Math**
 
 Lecture 5: **Machine Learning**
 
-[Slides, Notes and Readings](lectures/lecture5.html)
+[Slides, Notes and Readings](lectures/lecture5.html),
+[Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=9d0d79cc-18bd-4f07-aca9-087f492720f5)
+
+Lecture 6: **Gradient Descent**
+
+[Slides, Notes and Readings](lectures/lecture6.html)
