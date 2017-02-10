@@ -64,7 +64,7 @@ Lecture 5: **Machine Learning**
 
 Lecture 6: **Gradient Descent**
 
-[Slides, Notes and Readings](lectures/lecture6.html)
+[Slides, Notes and Readings](lectures/lecture6.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=dd5cdda8-5810-407f-8bd0-0d20c8c89d2f)
 
 Lab 6: **Theano, GD, and SGD**
 
