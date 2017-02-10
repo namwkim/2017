@@ -1,17 +1,13 @@
 ---
-title:
-shorttitle:
+title: Long Homework 1
+shorttitle: Long Homework 1
 notebook: Long_HW_1.ipynb
 noline: 1
 layout: wiki
 ---
+
 ## AMPTH 207: Stochastic Methods for Data Analysis, Inference and Optimization
-
-### Long Homework 1
-
-**Harvard University**  
-**Spring 2017**  
-**Instructor: Rahul Dave**  
+ 
 **Due Date:** Thursday, Febrary 23rd, 2017 at 11:59pm
 
 **Instructions:**
@@ -54,7 +50,7 @@ $$G(b^{(2)}+W^{(2)}(s(b^{(1)}W^{(1)}x)))$$
 
 with bias vectors $b^{(1)}$, $b^{(2)}$; weight matrices $W^{(1)}$, $W^{(2)}$ and activation functions $G$ and $s$. Here is a diagram:
 
-<img src="http://deeplearning.net/tutorial/_images/mlp.png", width=300, height=300>
+![](http://deeplearning.net/tutorial/_images/mlp.png){:height=300 width=300}
 
 ### Part A
 
@@ -82,3 +78,4 @@ with gzip.open(dataset, 'rb') as f:
         except:
             train_set, valid_set, test_set = pickle.load(f)
 ```
+
