@@ -12,3 +12,4 @@ layout: "default"
 - [Lab 2](lab2.html): Stratification and Math
 - [Lecture 5](lecture5.html): Machine Learning
 - [Lecture 6](lecture6.html): Gradient Descent
+- [Lab 3](lab3.html): Theano, GD, and SGD
