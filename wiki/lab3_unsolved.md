@@ -22,6 +22,7 @@ $\newcommand{\avg}{\overline}$
 $\newcommand{\est}{\hat}$
 $\newcommand{\trueval}[1]{#1^{*}}$
 $\newcommand{\Gam}[1]{\mathrm{Gamma}#1}$
+
 ## Installing Theano
 
 We shall be using Theano 0.6 in this course:
