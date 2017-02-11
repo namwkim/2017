@@ -1,10 +1,18 @@
 ---
-title: 
-shorttitle: 
+title: Expectations and the Law of Large Numbers
+shorttitle: Expectations and the Law of Large Numbers
 notebook: Expectations.ipynb
 noline: 1
+keywords: ['expectations', 'law of large numbers', 'lotus', 'distributions', 'probability']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
+
 
 
 
@@ -109,7 +117,7 @@ plt.xscale('log')
 
 
 
-![png](Expectations_files/Expectations_5_0.png)
+![png](Expectations_files/Expectations_7_0.png)
 
 
 

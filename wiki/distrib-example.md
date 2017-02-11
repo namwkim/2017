@@ -3,8 +3,15 @@ title: Distributions example -  elections
 shorttitle: Distributions example -  elections
 notebook: distrib-example.ipynb
 noline: 1
+keywords: ['bernoulli distribution', 'binomial distribution', 'normal distribution', 'central limit theorem', 'uniform distribution', 'empirical distribution', 'elections']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
@@ -145,7 +152,7 @@ plt.tight_layout()
 
 
 
-![png](distrib-example_files/distrib-example_6_2.png)
+![png](distrib-example_files/distrib-example_7_2.png)
 
 
 ### Running the simulation using the Uniform distribution
@@ -246,7 +253,7 @@ plot_simulation(result)
 
 
 
-![png](distrib-example_files/distrib-example_15_0.png)
+![png](distrib-example_files/distrib-example_16_0.png)
 
 
 The model created by combining the probabilities we obtained from Predictwise with the simulation of a biased coin flip corresponding to the win probability in each states leads us to obtain a histogram of election outcomes. We are plotting the probabilities of a prediction, so we call this distribution over outcomes the **predictive distribution**. Simulating from our model and plotting a histogram allows us to visualize this predictive distribution. In general, such a set of probabilities is called a  **probability mass function**. 
@@ -290,7 +297,7 @@ plt.ylabel("probability of Obama win");
 
 
 
-![png](distrib-example_files/distrib-example_20_0.png)
+![png](distrib-example_files/distrib-example_21_0.png)
 
 
 ## Binomial Distribution 
@@ -334,7 +341,7 @@ q=plt.xlabel("$k$")
 
 
 
-![png](distrib-example_files/distrib-example_22_0.png)
+![png](distrib-example_files/distrib-example_23_0.png)
 
 
 ### Applying the CLT to elections: Binomial distribution in the large n, large k limit
@@ -575,7 +582,7 @@ plot_simulation(prediction)
 
 
 
-![png](distrib-example_files/distrib-example_31_0.png)
+![png](distrib-example_files/distrib-example_32_0.png)
 
 
 ### Multiple Pollsters

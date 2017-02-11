@@ -3,8 +3,15 @@ title: Gradient Descent and SGD
 shorttitle: Gradient Descent and SGD
 notebook: gradientdescent.ipynb
 noline: 1
+keywords: ['gradient descent', 'sgd', 'minibatch sgd', 'linear regression']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
@@ -87,7 +94,7 @@ plt.plot(grid,best_fit(grid), '.')
 
 
 
-![png](gradientdescent_files/gradientdescent_7_1.png)
+![png](gradientdescent_files/gradientdescent_8_1.png)
 
 
 ## Batch gradient descent
@@ -191,7 +198,7 @@ plt.plot(range(len(cost)), cost);
 
 
 
-![png](gradientdescent_files/gradientdescent_13_0.png)
+![png](gradientdescent_files/gradientdescent_14_0.png)
 
 
 The following animation shows how the regression line forms:
@@ -457,7 +464,7 @@ ax.plot([t[0] for t in history], [t[1] for t in history], 0 , markerfacecolor='r
 
 
 
-![png](gradientdescent_files/gradientdescent_18_0.png)
+![png](gradientdescent_files/gradientdescent_19_0.png)
 
 
 ## Stochastic gradient descent
@@ -595,7 +602,7 @@ plt.xlim
 
 
 
-![png](gradientdescent_files/gradientdescent_23_1.png)
+![png](gradientdescent_files/gradientdescent_24_1.png)
 
 
 
@@ -636,7 +643,7 @@ ax.plot([t[0] for t in history2], [t[1] for t in history2], 0 , alpha=0.5, marke
 
 
 
-![png](gradientdescent_files/gradientdescent_24_0.png)
+![png](gradientdescent_files/gradientdescent_25_0.png)
 
 
 
@@ -654,7 +661,7 @@ plt.plot([t[0] for t in history2], [t[1] for t in history2],'o-', alpha=0.1)
 
 
 
-![png](gradientdescent_files/gradientdescent_25_1.png)
+![png](gradientdescent_files/gradientdescent_26_1.png)
 
 
 

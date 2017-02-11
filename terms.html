@@ -1,11 +1,63 @@
 ---
-title: Terms Glossary and Index
+title: Terms Index
 shorttitle: Terms
 layout: default
 noline: 1
 ---
 
----
+<hr/>
+
+{% comment %}
+=======================
+The following part extracts all the tags from your posts and sort tags, so that you do not need to manually collect your tags to a place.
+from https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/
+=======================
+{% endcomment %}
+{% assign rawkw = "" %}
+{% for page in site.pages %}
+	{% assign ttags = page.keywords | join:'|' | append:'|' %}
+	{% assign rawkw = rawkw | append:ttags %}
+{% endfor %}
+{% assign rawkw = rawkw | split:'|' | sort %}
+
+{% comment %}
+=======================
+The following part removes dulpicated tags and invalid tags like blank tag.
+=======================
+{% endcomment %}
+{% assign tags = "" %}
+{% for tag in rawkw %}
+	{% if tag != "" %}
+		{% if tags == "" %}
+			{% assign tags = tag | split:'|' %}
+		{% endif %}
+		{% unless tags contains tag %}
+			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
+
+{% comment %}
+=======================
+The purpose of this snippet is to list all your posts posted with a certain tag.
+=======================
+{% endcomment %}
+{% for tag in tags %}
+	<h3 id="{{ tag | slugify }}">{{ tag }}</h3>
+	<ul>
+	 {% for page in site.pages %}
+		 {% if page.keywords contains tag %}
+		 <li>
+		 <a href="{{ page.url }}">
+		 {{ page.title }}
+		 </a>
+		 </li>
+		 {% endif %}
+	 {% endfor %}
+	</ul>
+{% endfor %}
+
+<!--
 
 ### Bayesian Regression
 
@@ -130,3 +182,5 @@ noline: 1
 ### Uniform Distribution
 
 ### Union
+
+-->

@@ -3,8 +3,16 @@ title: Lab  3 - Implementing Logistic Regression with Gradient Descent using The
 shorttitle: Lab  3 - Implementing Logistic Regression with Gradient Descent using Theano
 notebook: lab3.ipynb
 noline: 1
+keywords: ['gradient descent', 'logistic regression', 'theano', 'sgd', 'minibatch sgd']
+data: ['data/iris_dataset.pickle']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 ## Learning Aims
 
@@ -181,7 +189,7 @@ plt.plot(x_eval,y)
 
 
 
-![png](lab3_files/lab3_9_3.png)
+![png](lab3_files/lab3_11_3.png)
 
 
 ### Shared variables
@@ -339,7 +347,7 @@ plt.plot(x_eval,y)
 
 
 
-![png](lab3_files/lab3_19_1.png)
+![png](lab3_files/lab3_21_1.png)
 
 
 ## Gradient descent
@@ -523,7 +531,7 @@ axarr[1, 1].scatter(features[:,1][species == 2],features[:,3][species == 2],colo
 
 
 
-![png](lab3_files/lab3_32_1.png)
+![png](lab3_files/lab3_34_1.png)
 
 
 ## Using Theano to do classification with the logistic regression
@@ -697,7 +705,7 @@ plt.axis('tight')
 
 
 
-![png](lab3_files/lab3_46_1.png)
+![png](lab3_files/lab3_48_1.png)
 
 
 Now estimate the number of errors made by the classifier on the training set itself.

@@ -6,6 +6,13 @@ noline: 1
 layout: wiki
 ---
 
+##### importance sampling, expectations, integration, sampling
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
+
 Importance sampling is directly a method to calculate integrals or expectations, which is one of our main goals at the end of things.
 
 The basic idea behind importance sampling is that we want to draw more samples where $h(x)$, a function whose integral or expectation we desire, is large.  In the case we are doing an expectation, it would indeed be even better to draw more samples where $h(x)f(x)$ is large, where $f(x)$ is the pdf we are calculating the integral with respect to.
@@ -182,7 +189,7 @@ plt.legend()
 
 
 
-![png](importancesampling_files/importancesampling_5_2.png)
+![png](importancesampling_files/importancesampling_6_2.png)
 
 
 
