@@ -451,7 +451,7 @@ Let us explore the dataset a bit by plotting the features color-coded according 
 
 
 ```python
-
+# Assing numbers to species (better to work with numbers than with strings)
 uni = np.unique(species)
 
 species[species == uni[0]] = 0
@@ -531,6 +531,12 @@ axarr[1, 1].scatter(features[:,1][species == 2],features[:,3][species == 2],colo
 We will use Theano to train a logistic regression classifier using this dataset. We leave validation and testing for the homework, but this part of the lab should form the basis of the code for your homework.
 First, let us define symbolic variables for the features and the classes.
 
+Remember that we have a vector of inputs (features): $\mathbf{x}$, and a vector of outputs $\mathbf{y}$. We are trying the learn a function $f$ that maps $\mathbf{x}$ into $\mathbf{y}$:
+
+$$\mathbf{y} = f(\mathbf{w}\cdot\mathbf{x} + \mathbf{b})$$
+
+where the matrix $\mathbf{w}$ contains the weights, and $\mathbf{b}$ is the bias vector, which are the parameters we want to optimize.
+
 
 
 ```python
@@ -582,6 +588,25 @@ print(b.get_value())
 
 
 Next step is the creation of the computational graph that computes the cost function for using all examples in the dataset. The likelihood is is built using the softmax formulation. In this formulation, we project the input vector into a set of hyperplanes that represent the different classes, and the distance from the vector to each of these hyperplanes relates to the probability of the input belonging to a given class. Write a graph that calculates the likelihood, the loss and the cost function, as well as the gradients of the cost function with respects to the weights and the bias terms. Use an L2 regularization approach.
+
+In the softmax formulation, the likelihood is (for this case with three classes):
+
+$$P(\mathbf{y}|\mathbf{x};\mathbf{\theta})=
+\prod_{i=1}^n\Pi_{i1}^{\mathbb{1}_0(y1)}\Pi_{i2}^{\mathbb{1}_1(y1)}\Pi_{i3}^{\mathbb{1}_2(y1)}$$
+
+where
+
+$$\Pi_{ij} = \frac{e^{x_i\Theta_j}}{e^{x_i\Theta_1} + e^{x_i\Theta_2} + e^{x_i\Theta_3}} $$
+
+is the probability of the output belonging to class $j$, and $\mathbb{1}_c(y_i)$ is the indicator function, which takes the value 1 if $y_i=c$, and 0 otherwise.
+
+If we take the *NLL* of the likelihood we get the loss function:
+
+$$J(\theta) = -\sum_{i=1}^n\mathbb{1}_0(y_i)\log\Pi_{i1} + \mathbb{1}_1(y_i)\log\Pi_{i2}
++ \mathbb{1}_2(y_i)\log\Pi_{i2}$$
+
+Let us code it:
+
 
 
 
