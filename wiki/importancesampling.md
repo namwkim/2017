@@ -3,10 +3,10 @@ title:  Importance Sampling
 shorttitle:  Importance Sampling
 notebook: importancesampling.ipynb
 noline: 1
+keywords: ['importance sampling', 'expectations', 'integration', 'sampling']
 layout: wiki
 ---
 
-##### importance sampling, expectations, integration, sampling
 
 ## Contents
 {:.no_toc}
