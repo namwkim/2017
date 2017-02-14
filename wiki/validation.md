@@ -3,8 +3,10 @@ title: Why do we need validation?
 shorttitle: Why do we need validation?
 notebook: validation.ipynb
 noline: 1
+keywords: ['empirical risk minimization', "hoeffding's inequality", 'hypothesis space', 'training error', 'out-of-sample error', 'testing set', 'training set', 'test error', 'validation error', 'complexity parameter', 'cross-validation']
 layout: wiki
 ---
+
 
 ## Contents
 {:.no_toc}

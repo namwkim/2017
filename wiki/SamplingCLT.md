@@ -1,10 +1,18 @@
 ---
-title: 
-shorttitle: 
+title: Sampling and the Central Limit Theorem
+shorttitle: Sampling and the Central Limit Theorem
 notebook: SamplingCLT.ipynb
 noline: 1
+keywords: ['central limit theorem', 'sampling', 'normal distribution', 'standard error', 'sampling distribution of variance', 'sampling distribution']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
+
 
 
 
@@ -96,7 +104,7 @@ plt.ylim([0.480,0.520]);
 
 
 
-![png](SamplingCLT_files/SamplingCLT_10_0.png)
+![png](SamplingCLT_files/SamplingCLT_12_0.png)
 
 
 Not surprisingly, the mean of the sample means converges to the distribution mean as the sample size N gets very large.
@@ -146,7 +154,7 @@ plt.hist(sample_means_at_size_1000, bins=np.arange(0,1,0.01), alpha=0.3);
 
 
 
-![png](SamplingCLT_files/SamplingCLT_15_0.png)
+![png](SamplingCLT_files/SamplingCLT_17_0.png)
 
 
 The distribution is much tighter at large sample sizes, and that you can have way low and way large means at small sample sizes. Indeed there are means as small as 0.1 at a sample size of 10, and as small as 0.3 at a sample size of 100. 
@@ -165,7 +173,7 @@ plt.ylim([0.25,0.75]);
 
 
 
-![png](SamplingCLT_files/SamplingCLT_18_0.png)
+![png](SamplingCLT_files/SamplingCLT_20_0.png)
 
 
 ### The variation of the sample mean
@@ -204,7 +212,7 @@ plt.plot(np.log10(sample_sizes), np.log10(std_of_sample_means));
 
 
 
-![png](SamplingCLT_files/SamplingCLT_21_0.png)
+![png](SamplingCLT_files/SamplingCLT_23_0.png)
 
 
 Let us plot again the distribution of sample means at a large sample size, $N=1000$. What distribution is this?
@@ -217,7 +225,7 @@ plt.hist(sample_means_at_size_1000, bins=np.arange(0.4,0.6,0.002));
 
 
 
-![png](SamplingCLT_files/SamplingCLT_23_0.png)
+![png](SamplingCLT_files/SamplingCLT_25_0.png)
 
 
 Lets step back and try and think about what this all means. As an example, say I have a weight-watchers' study of 1000 people, whose average weight is 150 lbs with standard deviation of 30lbs. If I was to randomly choose many samples of 100 people each, the mean weights of those samples would cluster around 150lbs with a standard error of 30/$\sqrt{100}$ = 3lbs. Now if i gave you a different sample of 100 people with an average weight of 170lbs, this weight would be more than 6 standard errors beyond the population mean, ^[this example is motivated by the crazy bus example in Charles Whelan's excellent Naked Statistics Book] and would thus be very unlikely to be from the weight watchers group.
@@ -256,7 +264,7 @@ plt.xlabel("$x$");
 
 
 
-![png](SamplingCLT_files/SamplingCLT_27_1.png)
+![png](SamplingCLT_files/SamplingCLT_29_1.png)
 
 
 ## The Central Limit Theorem
@@ -321,7 +329,7 @@ plt.xscale("log");
 
 
 
-![png](SamplingCLT_files/SamplingCLT_32_0.png)
+![png](SamplingCLT_files/SamplingCLT_34_0.png)
 
 
 The "mean sample variance" asymptotes to the true variance of 0.25 by a sample size of 100. 
@@ -355,5 +363,5 @@ plt.hist(sample_vars_1000_replicates[99], bins=np.arange(0.2,0.26,0.001), alpha=
 
 
 
-![png](SamplingCLT_files/SamplingCLT_34_0.png)
+![png](SamplingCLT_files/SamplingCLT_36_0.png)
 

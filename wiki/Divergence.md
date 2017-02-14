@@ -3,7 +3,7 @@ title: Divergence and Deviance
 shorttitle: Divergence and Deviance
 notebook: Divergence.ipynb
 noline: 1
-keywords: ['kl-divergence', "jensen's inequality", 'likelihood', 'log-likelihood', 'deviance', 'entropy', 'cross-entropy', 'likelihood-ratio']
+keywords: ['kl-divergence', "jensen's inequality", 'likelihood', 'log-likelihood', 'deviance', 'entropy', 'cross-entropy', 'likelihood-ratio', 'probabilistic modeling']
 layout: wiki
 ---
 

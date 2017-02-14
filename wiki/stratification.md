@@ -3,8 +3,15 @@ title: Stratification for Variance Reduction
 shorttitle: Stratification for Variance Reduction
 notebook: stratification.ipynb
 noline: 1
+keywords: ['variance reduction', 'stratification', '']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
@@ -187,5 +194,5 @@ plt.legend()
 
 
 
-![png](stratification_files/stratification_10_2.png)
+![png](stratification_files/stratification_11_2.png)
 

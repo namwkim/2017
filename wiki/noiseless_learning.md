@@ -3,8 +3,10 @@ title: Learning a model
 shorttitle: Learning a model
 notebook: noiseless_learning.ipynb
 noline: 1
+keywords: ['empirical risk minimization', 'bias', 'sampling distribution', 'hypothesis space', 'law of large numbers', 'deterministic error', 'training error', 'out-of-sample error']
 layout: wiki
 ---
+
 
 ## Contents
 {:.no_toc}

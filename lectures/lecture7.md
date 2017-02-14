@@ -7,7 +7,7 @@ noline: 1
 
 ## Slides
 
- to come
+- [PDF](../slides/lecture7.pdf)
 
 
 ## Notes
@@ -15,7 +15,7 @@ noline: 1
 These are best read in order!
 
 - [Regularization](../wiki/regularization.html)
-- Last part of [Maximum Likelihood Estimation](../wiki/mle.html), where we talk about MLE for logistic regression
+- Last part of [Maximum Likelihood Estimation](../wiki/MLE.html), where we talk about MLE for logistic regression
 - [Jensen's Inequality](../wiki/jensens.html) about convex functions
 - [Entropy](../wiki/Entropy.html)
 - [Divergence and Deviance](../wiki/Divergence.html)
