@@ -26,10 +26,11 @@ Fridays 11am - 1pm Lab. Compulsory to attend. Pierce 301.
 Always in B164, NW Building.
 
 - anytime by appointment with any of us.
-- Rahul: Tue and Thu 1.30pm to 2.30pm
+- Rahul: Tue and Thu 1.30pm to 2.30pm. ONLINE Thu 2.30-3.30pm.
+- Kevin: Wed 6-7pm
 - Michael: Wed 7pm to 8pm
 - Weiwei: Mon 4pm to 5pm
-- Patrick: Thu 4pm to 5pm
+- Patrick: ONLINE Wed 11pm-12am, ONLINE Thu 4pm to 5pm
 - Rafael: some weeks, time TBD.
 
 ## Online?

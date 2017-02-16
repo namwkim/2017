@@ -3,8 +3,15 @@ title: Calculus for optimization
 shorttitle: Calculus for optimization
 notebook: optimcalc.ipynb
 noline: 1
+keywords: ['calculus', 'optimization', 'gradient descent']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
@@ -45,7 +52,7 @@ plt.plot(xlist, flist);
 
 
 
-![png](optimcalc_files/optimcalc_4_0.png)
+![png](optimcalc_files/optimcalc_5_0.png)
 
 
 ## The Basic Idea of gradient Descent

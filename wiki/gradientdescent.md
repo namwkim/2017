@@ -3,7 +3,7 @@ title: Gradient Descent and SGD
 shorttitle: Gradient Descent and SGD
 notebook: gradientdescent.ipynb
 noline: 1
-keywords: ['gradient descent', 'sgd', 'minibatch sgd', 'linear regression']
+keywords: ['optimization', 'gradient descent', 'sgd', 'minibatch sgd', 'linear regression']
 layout: wiki
 ---
 

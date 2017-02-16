@@ -3,8 +3,10 @@ title: Regularization
 shorttitle: Regularization
 notebook: regularization.ipynb
 noline: 1
+keywords: ['regularization', 'linear regression', 'cross-validation', 'ridge', 'lasso', 'complexity parameter']
 layout: wiki
 ---
+
 
 ## Contents
 {:.no_toc}

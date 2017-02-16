@@ -69,3 +69,11 @@ Lecture 6: **Gradient Descent**
 Lab 6: **Theano, GD, and SGD**
 
 [Notes and Material](lectures/lab3.html), [Video](https://vimeo.com/203542166)
+
+---
+
+### Week 4
+
+Lecture 6: **Information Theory**
+
+[Slides, Notes and Readings](lectures/lecture7.html)

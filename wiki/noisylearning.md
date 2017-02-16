@@ -3,8 +3,10 @@ title: Noisy Learning
 shorttitle: Noisy Learning
 notebook: noisylearning.ipynb
 noline: 1
+keywords: ['empirical risk minimization', 'bias', 'sampling distribution', 'hypothesis space', 'training error', 'out-of-sample error', 'variance', 'stochastic noise', 'bias-variance tradeoff']
 layout: wiki
 ---
+
 
 ## Contents
 {:.no_toc}

@@ -3,9 +3,15 @@ title: Rejection Sampling
 shorttitle: Rejection Sampling
 notebook: rejectionsampling.ipynb
 noline: 1
+keywords: ['sampling', 'rejection sampling', 'rejection sampling on steroids']
 layout: wiki
 ---
 
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
@@ -104,7 +110,7 @@ plt.legend()
 
 
 
-![png](rejectionsampling_files/rejectionsampling_3_2.png)
+![png](rejectionsampling_files/rejectionsampling_4_2.png)
 
 
 Notice that $y_{max}$ was just assumed here. In general we might have to do a maximization. This has a cost. We want to keep this cost low, or we might be spending some time there. If the optimization is complex, it might be cheaper to  do something else...
@@ -220,7 +226,7 @@ plt.legend()
 
 
 
-![png](rejectionsampling_files/rejectionsampling_6_2.png)
+![png](rejectionsampling_files/rejectionsampling_7_2.png)
 
 
 

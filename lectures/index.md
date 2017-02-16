@@ -13,3 +13,4 @@ layout: "default"
 - [Lecture 5](lecture5.html): Machine Learning
 - [Lecture 6](lecture6.html): Gradient Descent
 - [Lab 3](lab3.html): Theano, GD, and SGD
+- [Lecture 7](lecture7.html): Information Theory

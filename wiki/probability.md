@@ -6,6 +6,13 @@ noline: 1
 layout: wiki
 ---
 
+#####  Keywords: probability, probability rules, marginals, conditions, independence, bayes theorem, random variables
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
+
 
 
 
@@ -144,7 +151,7 @@ plt.title('frequentist probability of heads');
 
 
 
-![png](probability_files/probability_13_0.png)
+![png](probability_files/probability_14_0.png)
 
 
 Thus, the true odds **fluctuate** about their long-run value of 0.5, in accordance with the model of a fair coin (which we encoded in our simulation by having `np.random.choice` choose between two possibilities with equal probability), with the fluctuations becoming much smaller (we shall talk a lot more about this later in the book). These **fluctations** are what give rise to probability distributions.
