@@ -19,7 +19,7 @@ Tuesday 11.30am - 1pm, Lecture. Compulsory to attend. Maxwell Dworkin G115.
 
 Thursday 11.30am - 1pm, Lecture. Compulsory to attend. Maxwell Dworkin G115.
 
-Fridays 11am - 1pm Lab. Compulsory to attend. Pierce 301.
+Fridays 2pm - 4pm Lab. Compulsory to attend. Pierce 301.
 
 ## Office Hours
 
