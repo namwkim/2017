@@ -3,8 +3,15 @@ title: Maximum Likelihood Estimation
 shorttitle: Maximum Likelihood Estimation
 notebook: MLE.ipynb
 noline: 1
+keywords: ['maximum likelihood', 'parametric model', 'linear regression', 'logistic regression', 'inference', 'exponential distribution']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
@@ -196,7 +203,7 @@ plt.plot(zs, h(zs), alpha=0.5);
 
 
 
-![png](MLE_files/MLE_10_0.png)
+![png](MLE_files/MLE_11_0.png)
 
 
 So we then come up with our rule by identifying:

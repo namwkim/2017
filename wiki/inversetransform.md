@@ -3,8 +3,15 @@ title: The Inverse Transform
 shorttitle: The Inverse Transform
 notebook: inversetransform.ipynb
 noline: 1
+keywords: ['sampling', 'inverse transform', 'cdf', 'box-muller', 'normal distribution']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
@@ -120,7 +127,7 @@ plt.legend()
 
 
 
-![png](inversetransform_files/inversetransform_4_1.png)
+![png](inversetransform_files/inversetransform_5_1.png)
 
 
 ### Box-Muller algorithm

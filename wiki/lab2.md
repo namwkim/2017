@@ -3,8 +3,15 @@ title: Mathlab (TM)
 shorttitle: Mathlab (TM)
 notebook: Lab2.ipynb
 noline: 1
+keywords: ['gradient descent', 'integration']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 Here we will go through some examples of solving math questions in calculus, vectors and matrices. We'll revisit these at other points in the course, as needed, but hopefully this notebook provides you some practice, some cheatsheet, etc
 

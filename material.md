@@ -52,3 +52,20 @@ Lecture 4: **Sampling Methods**
 Lab2: **Stratified Sampling and Math**
 
 [Notes and Material](lectures/lab2.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=03b49382-125a-4002-9346-ff79f13ff201)
+
+---
+
+### Week 3
+
+Lecture 5: **Machine Learning**
+
+[Slides, Notes and Readings](lectures/lecture5.html),
+[Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=9d0d79cc-18bd-4f07-aca9-087f492720f5)
+
+Lecture 6: **Gradient Descent**
+
+[Slides, Notes and Readings](lectures/lecture6.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=dd5cdda8-5810-407f-8bd0-0d20c8c89d2f)
+
+Lab 6: **Theano, GD, and SGD**
+
+[Notes and Material](lectures/lab3.html), [Video](https://vimeo.com/203542166)

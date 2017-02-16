@@ -3,8 +3,15 @@ title:  Importance Sampling
 shorttitle:  Importance Sampling
 notebook: importancesampling.ipynb
 noline: 1
+keywords: ['importance sampling', 'expectations', 'integration', 'sampling']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 Importance sampling is directly a method to calculate integrals or expectations, which is one of our main goals at the end of things.
 
@@ -182,7 +189,7 @@ plt.legend()
 
 
 
-![png](importancesampling_files/importancesampling_5_2.png)
+![png](importancesampling_files/importancesampling_6_2.png)
 
 
 
