@@ -76,7 +76,7 @@ Lab 6: **Theano, GD, and SGD**
 
 Lecture 7: **Information Theory**
 
-[Slides, Notes and Readings](lectures/lecture7.html)
+[Slides, Notes and Readings](lectures/lecture7.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=8626c897-c1e8-48e4-89d6-f9535945654a)
 
 Lecture 8: **AIC and Simulated Annealing**
 
