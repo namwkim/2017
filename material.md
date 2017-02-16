@@ -74,6 +74,10 @@ Lab 6: **Theano, GD, and SGD**
 
 ### Week 4
 
-Lecture 6: **Information Theory**
+Lecture 7: **Information Theory**
 
 [Slides, Notes and Readings](lectures/lecture7.html)
+
+Lecture 8: **AIC and Simulated Annealing**
+
+[Slides, Notes and Readings](lectures/lecture8.html)

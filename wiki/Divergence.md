@@ -185,3 +185,10 @@ We wont derive the AIC here, but if you are interested, see  http://www.stat.cmu
 
 Why would we want to use such information criteria? Cross validation can be expensive, especially with multiple hyper-parameters.
 We will have more to say about informatiom criterion when we figure how to do model selection in the bayesian context.
+
+
+
+```python
+
+```
+

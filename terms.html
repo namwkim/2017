@@ -47,9 +47,9 @@ The purpose of this snippet is to list all your posts posted with a certain tag.
 	<ul>
 	 {% for page in site.pages %}
 		 {% if page.keywords contains tag %}
-		 <li>
+		 <li>{{ page.title }}
 		 <a href="{{site.baseurl}}{{ page.url }}">
-		 {{ page.title }}
+		 [LINK]
 		 </a>
 		 </li>
 		 {% endif %}
