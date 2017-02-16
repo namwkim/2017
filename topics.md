@@ -12,16 +12,15 @@ Expect this list to either shrink, or for some topics to be replaced, as the sem
 
 - why this course
 - problems you can solve
-- the Box loop
+- the [Box loop](wiki/boxloop.html)
 - representing models graphically
 
 ### Probability
 
-- the basics of Probability
-- conditional, joint, marginal probabilities and bayes theorem
-- probability mass functions and cumulative functions
-- continuous probabilities and distributions, pdf, cdf, marginals, conditionals
-- expectations and integration
+- the basics of [Probability](wiki/probability.html)
+- [probability mass functions, densities and cumulative functions](wiki/distributions.html)
+- distributions [example](wiki/distrib-example.html)
+- [expectations and integration](wiki/Expectations.html)
 
 ### Distributions
 
@@ -33,31 +32,30 @@ Expect this list to either shrink, or for some topics to be replaced, as the sem
 
 ### Basic Stats and Monte Carlo
 
-- law of large numbers
+- [law of large numbers](wiki/Expectations.html)
 - pdf's vs sampling
-- monte-carlo for expectations(integrals)
-- central limit theorem
+- monte-carlo for [integrals](wiki/montecarlointegrals.html)
+- [sampling and central limit theorem](wiki/SamplingCLT.html)
 
 ### Frequentist Statistics
 
-- Frequentist principles
-- Sampling distributions
-- bootstrap
+- [Frequentist principles](wiki/frequentist.html) with sampling distributions and bootstrap
+- [frequentist example](wiki/frequentist-example.html)
+- [Sampling distributions and bootstrap](wiki/frequentist.html)
 - p-values and confidence intervals
 
 ### sampling methods
 
 - sampling vs simulation
-- the inverse method from the cdf
-- rejection sampling
-- importance sampling
+- the [inverse method](wiki/inversetransform.html) from the cdf
+- [rejection sampling](wiki/rejectionsampling.html)
+- [importance sampling](wiki/importancesampling.html)
 - SIR
-- sampling of major distributions
 - 2D and marginals from a sampling perspective
 
 ### Maximum Likelihood and Risk
 
-- maximum likelihood and log-likelihood
+- [maximum likelihood and log-likelihood](wiki/MLE.html)
 - density estimation vs supervised learning
 - covariates and linear regression: decision risk
 - logistic regression

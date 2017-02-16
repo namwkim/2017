@@ -3,14 +3,23 @@ title: Basic Monte Carlo
 shorttitle: Basic Monte Carlo
 notebook: basicmontercarlo.ipynb
 noline: 1
+keywords: ['sampling', 'rejection sampling', 'integration', 'lotus', 'law of large numbers', 'monte-carlo', 'expectations']
 layout: wiki
 ---
 
 
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
 
+
+
+
+## Monte Carlo
 
 The basic idea of a Monte Carlo Algorithm is to use randomness to solve what is often a deterministic problem. In this course, we'll study their application in 3 different places: optimization, integration, and obtaining draws from a probability distribution. These uses are often intertwined: optimization is needed to find modes of distributions and integration to find expectations.
 
@@ -73,7 +82,7 @@ print("pi = ", np.pi)
 
 
 
-![png](basicmontercarlo_files/basicmontercarlo_4_2.png)
+![png](basicmontercarlo_files/basicmontercarlo_5_2.png)
 
 
 Intuitively, one might expect our estimate of $\pi$ to get better as we draw more and more samples: we are covering the areas with samples much better when we do that.

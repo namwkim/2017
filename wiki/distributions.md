@@ -2,6 +2,7 @@
 title: Distributions
 shorttitle: Distributions
 layout: wiki
+keywords: ['cdf','pmf','pdf','uniform distribution', 'bernoulli distribution', 'conditional distribution', 'marginal distribution']
 ---
 
 Remember that a [Random Variable](probability.html) is a mapping $ X: \Omega \rightarrow \mathbb{R}$ that assigns a real number $X(\omega)$ to each outcome $\omega$ in a sample space $\Omega$.  The definitions below are taken from Larry Wasserman's All of Statistics.

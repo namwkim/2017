@@ -3,8 +3,15 @@ title:  Monte Carlo Integrals
 shorttitle:  Monte Carlo Integrals
 notebook: montecarlointegrals.ipynb
 noline: 1
+keywords: ['monte-carlo', 'integration', 'uniform distribution', 'law of large numbers', 'lotus', 'central limit theorem', 'normal distribution']
 layout: wiki
 ---
+
+
+## Contents
+{:.no_toc}
+* 
+{: toc}
 
 
 
@@ -161,7 +168,7 @@ plt.ylabel("sqrt((Imc-ExactValue)$^2$)")
 
 
 
-![png](montecarlointegrals_files/montecarlointegrals_10_1.png)
+![png](montecarlointegrals_files/montecarlointegrals_11_1.png)
 
 
 Obviously this depends on the number of $N$ as $1/\sqrt{N}$. 
@@ -205,7 +212,7 @@ print(np.mean(Imc), np.std(Imc))
 
 
 
-![png](montecarlointegrals_files/montecarlointegrals_13_1.png)
+![png](montecarlointegrals_files/montecarlointegrals_14_1.png)
 
 
 This looks like our telltale Normal distribution.

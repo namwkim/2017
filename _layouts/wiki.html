@@ -62,10 +62,23 @@
     {% endunless %}
   </header>
   <article>
-        {% if page.notebook %}
-        <p><a href="{{page.notebook}}">Download Notebook</a></p>
+        <p>
+        {% if page.keywords %}
+        Keywords:
+            {% for kw in page.keywords %}
+            <a href="../terms.html#{{ kw | slugify }}">{{ kw }}</a>&nbsp;|&nbsp;
+            {% endfor %}
         {% endif %}
-
+        {% if page.data %}
+        Data:
+            {% for data in page.data %}
+            <a href="{{ data }}">{{ data | split:'/' | last }}</a>&nbsp;|&nbsp;
+            {% endfor %}
+        {% endif %}
+        {% if page.notebook %}
+        Download <a href="{{page.notebook}}">Notebook</a>
+        {% endif %}
+        </p>
         {{ content }}
   </article>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

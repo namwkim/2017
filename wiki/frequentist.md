@@ -3,6 +3,7 @@ title: Frequentist Stats
 shorttitle: Frequentist Stats
 layout: wiki
 noline: 1
+keywords: ['frequentist statistics', 'maximum likelihood','bootstrap', 'sampling distribution']
 ---
 
 $$
