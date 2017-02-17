@@ -66,7 +66,7 @@ Lecture 6: **Gradient Descent**
 
 [Slides, Notes and Readings](lectures/lecture6.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=dd5cdda8-5810-407f-8bd0-0d20c8c89d2f)
 
-Lab 6: **Theano, GD, and SGD**
+Lab3: **Theano, GD, and SGD**
 
 [Notes and Material](lectures/lab3.html), [Video](https://vimeo.com/203542166)
 
@@ -80,4 +80,9 @@ Lecture 7: **Information Theory**
 
 Lecture 8: **AIC and Simulated Annealing**
 
-[Slides, Notes and Readings](lectures/lecture8.html)
+[Slides, Notes and Readings](lectures/lecture8.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=69902285-6bab-4236-bdaf-4f7a0e52c5ee)
+
+
+Lab4: **Simulated Annealing**
+
+[Notes and Material](lectures/lab4.html)
