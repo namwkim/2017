@@ -16,3 +16,4 @@ layout: "default"
 - [Lecture 7](lecture7.html): Information Theory
 - [Lecture 8](lecture8.html): AIC and Simulated Annealing
 - [Lab 4](lab4.html): Simulated Annealing
+- [Lecture 9](lecture9.html): Annealing, Metropolis, Markov, and MCMC

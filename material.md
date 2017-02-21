@@ -86,3 +86,11 @@ Lecture 8: **AIC and Simulated Annealing**
 Lab4: **Simulated Annealing**
 
 [Notes and Material](lectures/lab4.html)
+
+---
+
+### Week 5
+
+Lecture 9: Annealing, Metropolis, Markov, and MCMC
+
+[Slides, Notes, and Readings](lecture9.html)
