@@ -85,7 +85,7 @@ Lecture 8: **AIC and Simulated Annealing**
 
 Lab4: **Simulated Annealing**
 
-[Notes and Material](lectures/lab4.html)
+[Notes and Material](lectures/lab4.html), [Video](https://matterhorn.dce.harvard.edu/engage/player/watch.html?id=91cecfea-3737-46ff-b9a5-a7fa4c546218)
 
 ---
 
@@ -93,4 +93,4 @@ Lab4: **Simulated Annealing**
 
 Lecture 9: Annealing, Metropolis, Markov, and MCMC
 
-[Slides, Notes, and Readings](lecture9.html)
+[Slides, Notes, and Readings](lectures/lecture9.html)
