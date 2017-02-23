@@ -1,6 +1,6 @@
 ---
-title: Markov Chains
-shorttitle: Markov Chains
+title: Markov Chains and MCMC
+shorttitle: Markov Chains and MCMC
 notebook: markov.ipynb
 noline: 1
 layout: wiki
@@ -219,28 +219,30 @@ As long as we set up a sampling scheme that follows detailed balance we are ok.
 
 $$ s(x_i)T( x_{i-1} \vert x_i ) = s(x_{i-1}) T( x_i \vert x_{i-1} )$$
 
+### Proof of Detailed Balance
+
 The transition matrix (or kernel) can be written in this form for Metropolis:
 
-$$T(x_i \vert x_{i-1}) = q(x_i \vert x_{i-1})\,A(x_i, x_{i-1}) +  \delta(x_{i-1} - x_i)r(x_i)$$
+$$T(x_i \vert x_{i-1}) = q(x_i \vert x_{i-1})\,A(x_i, x_{i-1}) +  \delta(x_{i-1} - x_i)r(x_{i-1})$$
 
 where
 
 $$A(x_i, x_{i-1}) = min(1,  \frac{s(x_i)}{s(x_{i-1})})$$ 
 
-is the Metropolis acceptance probability and 
+is the Metropolis acceptance probability (you propose the move and accept it) and 
 
-$$r(x_i) = \int dy q(y \vert x_i)(1 - A(y, x_i))$$ is the rejection term.
+$$r(x_i) = \int dy q(y \vert x_i)(1 - A(y, x_i))$$ is the rejection term. In the event you dont move, this could have happened 2 ways: (a) you proposed to move to the same position and accepted it, or you proposes moves aevrywhere else but dont accept any of those proposals and stay where you are.
 
 Lets parse the term above:
 
 - the transition probability has two terms
 - the first term is the probability of proposing a new $x_i$ times the probability of accepting it
-- the second term if the probability $r(x_i)$ of rejecting it with the delta function setting it so that $x_i = x_{i-1}$
-- the integral adds over all the points $y$ that might have been proposed and then rejected
+- the second term is the probability $r(x_{i-1})$ of rejecting it with the delta function setting it so that $x_i = x_{i-1}$
+- the integral adds over all the points $y$ that might have been proposed and then rejected, so we stayed at $x_{i-1}$
 
-$$s(x_i)T( x_{i-1} \vert x_i ) =  s(x_i) q(x_{i-1} \vert x_{i})\,A(x_{i-1}, x_{i}) +  s(x_i) \delta(x_{i} - x_{i-1})r(x_{i-1})$$
+$$s(x_i)T( x_{i-1} \vert x_i ) =  s(x_i) q(x_{i-1} \vert x_{i})\,A(x_{i-1}, x_{i}) +  s(x_i) \delta(x_{i} - x_{i-1})r(x_{i})$$
 
-$$s(x_{i-1})T( x_{i} \vert x_{i-1} ) =  s(x_{i-1}) q(x_i \vert x_{i-1})\,A(x_i, x_{i-1}) +  s(x_{i-1})\delta(x_{i-1} - x_i)r(x_i)$$
+$$s(x_{i-1})T( x_{i} \vert x_{i-1} ) =  s(x_{i-1}) q(x_i \vert x_{i-1})\,A(x_i, x_{i-1}) +  s(x_{i-1})\delta(x_{i-1} - x_i)r(x_{i-1})$$
 
 The second term in each expression is equal.
 
@@ -248,6 +250,8 @@ Assume, without loss of generality that $s(x_i) < s(x_{i-1})$. Then the first te
 
 Thus the  Metropolis algorithm  respects $s(x)$ as the stationary distribution.
 
+
+### Intuition
 
 All this math boils down to the following intuition:
 
@@ -302,7 +306,7 @@ def metropolis_hastings(p,q, qdraw, nsamp, xinit):
 
 Look at the `proposalratio` term. Its a ratio of proposal pdfs. But its opposite to the ratio of the pdf that we want to sample from.
 
-What is the intuition behind this? Remenber that because you dont know how to sample from $p$, you are sampling from $q$ instead.  Now if q is asymmetric, you will have a greater chance of going in one direction than the other. Indeed you are more likely to get samples from the region where $q$ (more precisely each new $q$) is high . This may not match with the $p$ you want to sample from, and you want to correct this oversampling by multiplying by the proposal ration. This helps erase the memory of $q$ a bit.
+What is the intuition behind this? Remember that because you dont know how to sample from $p$, you are sampling from $q$ instead.  Now if q is asymmetric, you will have a greater chance of going in one direction than the other. Indeed you are more likely to get samples from the region where $q$ (more precisely each new $q$) is high . This may not match with the $p$ you want to sample from, and you want to correct this oversampling by multiplying by the proposal ration. This helps erase the memory of $q$ a bit.
 
 
 

@@ -94,3 +94,7 @@ Lab4: **Simulated Annealing**
 Lecture 9: Annealing, Metropolis, Markov, and MCMC
 
 [Slides, Notes, and Readings](lectures/lecture9.html)
+
+Lecture 10: Matropolis-Hastings and Bayes, with some Discrete Sampling
+
+[Slides, Notes, and Readings](lectures/lecture10.html)
