@@ -18,3 +18,4 @@ layout: "default"
 - [Lab 4](lab4.html): Simulated Annealing
 - [Lecture 9](lecture9.html): Annealing, Metropolis, Markov, and MCMC
 - [Lecture 10](lecture10.html): Metropolis-Hastings and Bayes
+- [Lab 5](lab5.html): Simulated Annealing
