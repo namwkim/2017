@@ -1,6 +1,6 @@
 ---
 shorttitle: "Lab 5"
-title: "Lab4 - MCMC and Bayesian"
+title: "Lab5 - MCMC and Bayes"
 layout: "default"
 noline: 1
 ---
