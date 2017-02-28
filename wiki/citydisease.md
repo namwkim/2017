@@ -177,7 +177,7 @@ posts
 
 The posterior predictive:
 
-$$p(y^{*} \vert D) = \int s\theta p(y^{*} \vert \theta) p(\theta \vert D)$$
+$$p(y^{*} \vert D) = \int d\theta p(y^{*} \vert \theta) p(\theta \vert D)$$
 
 seems to be a complex integral. But really from the perspective of sampling, all we have to do is to first draw the thetas from the posterior, then draw y's from the likelihood, and histogram the likelihood. This is the same logic as marginal posteriors, with the addition of the fact that we must draw  y from the likelihood once we drew $\theta$. You might think that we have to draw multiple $y$s at a theta, but this is already taken care of for us because of the nature of sampling. We already have multiple $\theta$a in a bin.
 

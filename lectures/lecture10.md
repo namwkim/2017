@@ -1,6 +1,6 @@
 ---
-shorttitle: "Lecture9"
-title: "Lecture 9: Markov Chains and MCMC"
+shorttitle: "Lecture10"
+title: "Lecture 10: MH, Bayes"
 layout: "default"
 noline: 1
 ---

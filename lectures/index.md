@@ -19,3 +19,4 @@ layout: "default"
 - [Lecture 9](lecture9.html): Annealing, Metropolis, Markov, and MCMC
 - [Lecture 10](lecture10.html): Metropolis-Hastings and Bayes
 - [Lab 5](lab5.html): Metropolis and Bayes
+- [Lecture 11](lecture11.html): Bayes
