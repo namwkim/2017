@@ -66,7 +66,7 @@ $$Y_{i,1} \sim Poisson(\theta_{1}),  Y_{i,2} \sim Poisson(\theta_{2})$$
 
 Then, the likelihood for the first population is: 
 
-$$ p(Y_{1,1}, \ldots, Y_{n_1,1} | \theta_1)  = \prod_{i=1}^{n_1} p(Y_{i,1}|\theta_1) =  \prod_{i=1}^{n_1}  \frac{1}{Y_{i,1} !} \theta_1^{Y_{i,1}} e^{-\theta_1}
+$$ p(Y_{1,1}, \ldots, Y_{n_1,1}  \vert  \theta_1)  = \prod_{i=1}^{n_1} p(Y_{i,1} \vert \theta_1) =  \prod_{i=1}^{n_1}  \frac{1}{Y_{i,1} !} \theta_1^{Y_{i,1}} e^{-\theta_1}
 = c(Y_{1,1}, \ldots, Y_{n_1,1}) \,\, (n_{1}\theta_{1})^{\sum Y_{i,1}} e^{-n_1 \theta_1}
   \sim Poisson(n_1 \theta_1) $$
   
@@ -74,7 +74,7 @@ $$ p(Y_{1,1}, \ldots, Y_{n_1,1} | \theta_1)  = \prod_{i=1}^{n_1} p(Y_{i,1}|\thet
   
   and similarly
 
-$$ Y_{1,2}, \ldots, Y_{n_1,2} | \theta_2 \sim Poisson(n_2\theta_2) $$
+$$ Y_{1,2}, \ldots, Y_{n_1,2}  \vert  \theta_2 \sim Poisson(n_2\theta_2) $$
 
 ** The distributions are still poisson **
 
@@ -82,7 +82,7 @@ $$ Y_{1,2}, \ldots, Y_{n_1,2} | \theta_2 \sim Poisson(n_2\theta_2) $$
 
 The posterior is a simple product of two sub-posteriors:
 
-$$p(\theta_1| Y_{1,1}, \ldots, Y_{n_1,1} )* p(\theta_2| Y_{1,2}, \ldots, Y_{n_2,2} ) ,$$ which, given independent priors on
+$$p(\theta_1 \vert  Y_{1,1}, \ldots, Y_{n_1,1} )* p(\theta_2 \vert  Y_{1,2}, \ldots, Y_{n_2,2} ) ,$$ which, given independent priors on
 
 $\theta_1$ and $\theta_2$, is:
 
@@ -97,11 +97,11 @@ For our example we have $n_1 =111$, $\sum_i^{n_1} Y_{i,1} =217$ and $n_2=44$, $\
 ### Congugate Priors
 
 Lets now choose priors. A class of priors is said to be **conjugate** for a sampling  distribution
-$p(y_1, \ldots, y_n| \theta)$ if the posterior is also in the class. 
+$p(y_1, \ldots, y_n \vert  \theta)$ if the posterior is also in the class. 
 
 For the Poisson :
 
-$$ p(Y_1, \ldots, y_n| \theta)  \sim  \theta^{\sum Y_i} e^{-n \theta} $$
+$$ p(Y_1, \ldots, y_n \vert  \theta)  \sim  \theta^{\sum Y_i} e^{-n \theta} $$
 
 Keeping the same functional form means our conjugate class has to include terms like $\theta^{c_1} e^{-c_2 \theta}$. 
 
@@ -109,9 +109,9 @@ This is a known family known as Gamma distributions.  In the shape-rate parametr
 
 $$p(\theta) =  \rm{Gamma}(\theta, a, b) = \frac{b^a}{\Gamma(a)} \theta^{a-1} e^{-b \theta} $$
 
-If $p(\theta) =  \rm{Gamma}(\theta, a, b)$ and $ p(Y_1 \ldots, Y_n | \theta) \sim \rm{Poisson}(\theta) $  then our posterior is:
+If $p(\theta) =  \rm{Gamma}(\theta, a, b)$ and $ p(Y_1 \ldots, Y_n  \vert  \theta) \sim \rm{Poisson}(\theta) $  then our posterior is:
 
-$$  p( \theta | Y_1, \ldots, Y_n) \sim \rm{Gamma}(\theta, a+\sum Y_i, b+n) $$
+$$  p( \theta  \vert  Y_1, \ldots, Y_n) \sim \rm{Gamma}(\theta, a+\sum Y_i, b+n) $$
 
 In other words $b$ "regularizes" the total number of moms and $a$ the kids. In other words, you have a data set of $b$ observations with an observed poisson count of $a$.
 
@@ -142,9 +142,9 @@ plt.legend();
 
 ### Our Posteriors
 
-$$ p(\theta_1|n_1 = 111,  \sum_i^{n_1} Y_{i,1}=217 ) \sim  \rm{Gamma}(\theta_1, 2+217, 1+111) =  \rm{Gamma}(\theta_1, 219, 112) $$
+$$ p(\theta_1 \vert n_1 = 111,  \sum_i^{n_1} Y_{i,1}=217 ) \sim  \rm{Gamma}(\theta_1, 2+217, 1+111) =  \rm{Gamma}(\theta_1, 219, 112) $$
 
-$$ p(\theta_2|n_2 = 44,  \sum_i^{n_2} Y_{i,2}=66 ) \sim  \rm{Gamma}(\theta_2, 2+66, 1+44) =  \rm{Gamma}(\theta_2, 68, 45) $$
+$$ p(\theta_2 \vert n_2 = 44,  \sum_i^{n_2} Y_{i,2}=66 ) \sim  \rm{Gamma}(\theta_2, 2+66, 1+44) =  \rm{Gamma}(\theta_2, 68, 45) $$
 
 The mean of our posterior is then a ratio of posterior kids to moms:
 
